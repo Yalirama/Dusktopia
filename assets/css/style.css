@@ -1,0 +1,55 @@
+/* Подключение шрифтов */
+@font-face {
+  font-family: 'TTOctosquares-Regular';
+  src: url('../fonts/TTOctosquares-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TTOctosquares-Medium';
+  src: url('../fonts/TTOctosquares-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Neue Machina';
+  src: url('../fonts/NeueMachina-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Mazzard';
+  src: url('../fonts/MazzardH-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Mazzard Bold';
+  src: url('../fonts/MazzardH-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Mazzard Mixed';
+  src: url('../fonts/MazzardM-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Обнуление стилей*/
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* body */
+body {
+	font-family: 'Mazzard';
+}
+

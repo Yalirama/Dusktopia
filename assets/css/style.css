@@ -47,6 +47,14 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'Move-X';
+  src: url('../fonts/Move-XBolddemo.otf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* Обнуление стилей*/
 * {
 	margin: 0;
@@ -213,6 +221,14 @@ a {
 .button.mod-3 .corner,
 .button.mod-4 .corner {
   background-color: #000;
+}
+
+
+.button.mod-1::after,
+.button.mod-2::after,
+.button.mod-3::after,
+.button.mod-4::after {
+  background-color: transparent;
 }
 
 .button.mod-1:hover .corner,
@@ -625,6 +641,146 @@ body {
   top: calc(35vw / var(--resizer) * 100);
   left: 0;
 }
+
+.factionsMoreInner {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  padding: calc(55vw / var(--resizer) * 100) calc(150vw / var(--resizer) * 100) calc(0vw / var(--resizer) * 100) calc(150vw / var(--resizer) * 100);
+  left: 0;
+  top: calc(1000vw / var(--resizer) * 100);
+  width: 100%;
+  height: 100vh;
+  z-index: 98;
+  transition: var(--transition);
+}
+
+.factionsMoreInner.active {
+  top: calc(0vw / var(--resizer) * 100);
+  transition: var(--transition);
+}
+
+.factionsMore .menu {
+  z-index: 99;
+}
+
+.factionsMoreInnerHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.factionsMoreImg {
+  margin: calc(40vw / var(--resizer) * 100) 0 calc(20vw / var(--resizer) * 100) 0;
+  width: auto;
+  height: calc(99vw / var(--resizer) * 100);
+}
+
+.factionsMoreImg img {
+  width: inherit;
+  height: inherit;
+}
+
+.factionsMoreTitle {
+  margin: 0 0 calc(15vw / var(--resizer) * 100) 0;
+  max-width: calc(1200vw / var(--resizer) * 100);
+  font-family: 'Move-X';
+  font-size: calc(20vw / var(--resizer) * 100);
+  font-style: normal;
+  font-weight: 700;
+  line-height: 140%;
+  color: #FFF;
+  text-transform: uppercase;
+}
+
+.factionsMoreTitle:last-child {
+  margin: 0;
+}
+
+.factionsMoreRow {
+  display: flex;
+  margin: calc(30vw / var(--resizer) * 100) 0 0 0;
+  width: 90%;
+  align-self: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.factionsMoreItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0 calc(30vw / var(--resizer) * 100) 0;
+  width: 23%;
+  height: calc(220vw / var(--resizer) * 100);
+  border-image: linear-gradient(to right bottom,#fff,transparent,transparent,#fff) 1;
+  border-style: solid;
+  border-width: calc(2vw / var(--resizer) * 100);
+  background: hsla(0,0%,100%,.2);
+  backdrop-filter: blur(calc(50vw / var(--resizer) * 100));
+}
+
+.factionsMoreItem:nth-child(even) {
+  position: relative;
+  top: calc(60vw / var(--resizer) * 100);
+}
+
+.factionsMoreItem p,
+.factionsMoreItem img {
+  width: calc(200vw / var(--resizer) * 100);
+  height: calc(160vw / var(--resizer) * 100);
+}
+
+.factionsMoreF {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(91vw / var(--resizer) * 100);
+  height: calc(401vw / var(--resizer) * 100);
+  z-index: 99;
+}
+
+.factionsMoreF::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-15%, 10%);
+  width: calc(10vw / var(--resizer) * 100);
+  height: 100%;
+  background: #646464;
+  z-index: 98;
+}
+
+.factionsMoreF svg {
+  position: relative;
+  width: calc(91vw / var(--resizer) * 100);
+  height: calc(95vw / var(--resizer) * 100);
+  z-index: 99;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Keyframes */
 @keyframes noise-anim {

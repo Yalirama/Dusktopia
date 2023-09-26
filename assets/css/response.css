@@ -1,6 +1,8 @@
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
 	/* Заготовки */
 	:root {
+		--resizer: 1800;
+		--transition: .4s all linear;
     --crop-width: 30px;
     --crop-height: 5px;
     --border-width: 2px;
@@ -44,8 +46,13 @@
 	}
 
 	input[type="checkbox"] {
-		display:none;
-	}
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
 
 	input[type="checkbox"]:checked ~ span:nth-of-type(1) {
 		transform-origin:bottom;
@@ -91,6 +98,11 @@
     right: calc(var(--border-width) + 3px);
 	}
 
+	.button:hover .corner {
+    height: 500%;
+    width: 1100%;
+	}
+
 	.button p {
     font-size: 20px;
 	}
@@ -113,12 +125,119 @@
 	.intro {
     position: relative;
     padding: 30px 25px;
-    background: url(../img/bg/home.png) center / cover no-repeat;
+    background: url('../img/bg/home.png') 81% / cover no-repeat;
     min-height: 100vh;
 	}
 
+	.introHead .logotype,
+	.introHead .burger {
+		position: relative;
+		z-index: 99;
+	}
+
 	.introHead nav {
+		position: absolute;
+		flex-direction: column;
+		align-items: center;
+		top: -100%;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		min-height: 100vh;
+		background: url('../img/bg/menu.png') 50% / cover no-repeat;
+		z-index: -1;
+		opacity: 0;
+		visibility: hidden;
+		transition: var(--transition);
+		overflow-y: scroll;
+	}
+
+	.headerNavRow {
+		display: flex;
+		flex-direction: column;
+		margin: 200px 0 0 0;
+		padding: 0 0 100px 0;
+		width: 100%;
+		overflow-y: scroll;
+	}
+
+	.headerNavRow::-webkit-scrollbar {
+		width: 0;
 		display: none;
+	}
+
+	.introHead nav, .introHead .navLinkS {
+		align-self: center;
+	}
+
+	.introHead nav .button {
+		display: none;
+	}
+
+	.introHead nav ul {
+		display: flex;
+		flex-direction: column;
+		list-style: none;
+	}
+
+	.introHead nav ul li {
+		position: relative;
+		margin: 0 0 82px 0;
+		text-align: center;
+		font-family: 'Neue Machina';
+		font-size: 30px;
+		font-style: normal;
+		font-weight: 500;
+		line-height: 100%;
+		color: rgba(255, 255, 255, 0.56);
+		transition: var(--transition);
+	}
+
+	.introHead nav ul li::after {
+		content: '';
+		position: absolute;
+		top: 150%;
+		left: 50%;
+		width: 25px;
+		height: 25px;
+		transform: translate(-50%, 50%);
+		background: url('../img/png/star.png') center / cover no-repeat;
+	}
+
+	.introHead nav ul li:last-child::after {
+		content: none;
+	}
+
+	.introHead nav .navLink {
+    margin: 0 31px 0 0;
+	}
+
+	.introHead nav .navLink:nth-child(1) {
+    width: 26px;
+    height: 21.5px;
+	}
+
+	.introHead nav .navLink:nth-child(2) {
+    width: 27px;
+    height: 23px;
+	}
+
+	.introHead nav .navLink:nth-child(3) {
+    width: 30px;
+    height: 30px;
+	}
+
+	.introHead nav .navLink:last-child {
+		margin: 0;
+	}
+
+	.introHead nav ul li.active,
+	.introHead nav ul li:hover {
+		color: #fff;
+	}
+
+	.introHead nav ul li a {
+		color: inherit;
 	}
 
 	.intro h1 {
@@ -140,8 +259,75 @@
 	.intro .row .button:last-child {
     margin: 0 0 30px 0;
 	}
+
+	.intro.active .introHead nav {
+		top: 0;
+		opacity: 1;
+		visibility: visible;
+		z-index: 9;
+	}
 }
 
 @media screen and (max-width: 600px) {
-	
+	/* Заготовки */
+	.logotype {
+    width: 150px;
+    height: 25px;
+	}
+	.burger {
+    zoom: 40%;
+		transform: rotate(180deg);
+	}
+
+	label span {
+    height: 4px;
+    margin: 8px 0;
+	}
+
+	.button {
+    min-width: 170px;
+    padding: 25px 30px 20px 30px;
+	}
+
+	.button p {
+		font-size: 19px;
+	}
+
+	.button .corner-f {
+    -webkit-clip-path: polygon(100% 0,0 0,0 100%);
+    clip-path: polygon(100% 0,0 0,0 100%);
+    left: calc(var(--border-width) + 5px);
+    top: calc(var(--crop-height) + var(--border-width) + 5px);
+	}
+
+	.button .corner-s {
+    bottom: calc(var(--border-width) + 5px);
+    -webkit-clip-path: polygon(100% 0,100% 100%,0 100%);
+    clip-path: polygon(100% 0,100% 100%,0 100%);
+    right: calc(var(--border-width) + 5px);
+	}
+
+	.button .corner-s, .button .corner-f {
+    height: 11px;
+    width: 11px;
+	}
+
+	/* Intro */
+	.intro {
+    padding: 35px 25px;
+	}
+
+	.intro h1 {
+		font-size: 50px;
+		line-height: 100%;
+		letter-spacing: 10.5px;
+	}
+
+	.intro .row .button:last-child {
+		margin: 0 0 25px 0;
+	}
+
+	.headerNavRow {
+		margin: 150px 0 0 0;
+	}
 }

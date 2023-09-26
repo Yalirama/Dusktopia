@@ -317,9 +317,14 @@ body {
   align-items: center;
 }
 
-.introHead nav {
+.introHead nav,
+.introHead .navLinkS {
   display: flex;
   align-items: center;
+}
+
+.introHead nav ul {
+  display: none;
 }
 
 .introHead nav .navLink {

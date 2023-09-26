@@ -4,6 +4,7 @@
   src: url('../fonts/TTOctosquares-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -11,6 +12,7 @@
   src: url('../fonts/TTOctosquares-Medium.ttf') format('truetype');
   font-weight: 500;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -18,6 +20,7 @@
   src: url('../fonts/NeueMachina-Bold.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -25,6 +28,7 @@
   src: url('../fonts/MazzardH-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -32,6 +36,7 @@
   src: url('../fonts/MazzardH-Bold.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -39,6 +44,7 @@
   src: url('../fonts/MazzardM-Bold.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
+  font-display: swap;
 }
 
 /* Обнуление стилей*/
@@ -48,8 +54,616 @@
 	box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;  
+}
+
+/* Заготовки */
+:root {
+  --resizer: 1800;
+  --transition: .4s all linear;
+  --crop-width: calc(30vw / var(--resizer) * 100);
+  --crop-height: calc(5vw / var(--resizer) * 100);
+  --border-width: calc(2vw / var(--resizer) * 100);
+}
+
+.logotype {
+  width: calc(250vw / var(--resizer) * 100);
+  height: calc(40vw / var(--resizer) * 100);
+}
+
+.logotype p,
+.logotype img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: inherit;
+  height: inherit;
+}
+
+.glitch {
+  position: relative;
+  display: inline-block;
+  text-transform: uppercase;
+}
+
+.glitch:after {
+  clip: rect(0, calc(9999vw / var(--resizer) * 100), 0, 0);
+  content: attr(data-text);
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  text-shadow: calc(-1vw / var(--resizer) * 100) 0 #ab77a9;
+  top: 0;
+}
+
+.button {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: calc(170vw / var(--resizer) * 100);
+  padding: calc(25vw / var(--resizer) * 100) calc(30vw / var(--resizer) * 100) calc(20vw / var(--resizer) * 100) calc(30vw / var(--resizer) * 100);
+  -webkit-clip-path: polygon(0 var(--crop-height),calc(100% - var(--crop-width) - var(--crop-height)) var(--crop-height),calc(100% - var(--crop-width)) 0,100% 0,100% 100%,calc(var(--crop-width) + var(--crop-height)) 100%,calc(var(--crop-width)) calc(100% - var(--crop-height)),0 calc(100% - var(--crop-height)));
+  clip-path: polygon(0 var(--crop-height),calc(100% - var(--crop-width) - var(--crop-height)) var(--crop-height),calc(100% - var(--crop-width)) 0,100% 0,100% 100%,calc(var(--crop-width) + var(--crop-height)) 100%,calc(var(--crop-width)) calc(100% - var(--crop-height)),0 calc(100% - var(--crop-height)));
+  cursor: pointer;
+  transition: var(--transition);
+  overflow: hidden;
+}
+
+.button.transparent {
+  background: transparent;
+  color: #fff;
+}
+
+.button.white {
+  background: #fff;
+  color: #000;
+}
+
+.button:not(.white):after {
+  content: "";
+  position: absolute;
+  background-color: #fff;
+  height: 100%;
+  left: 0;
+  top: 0;
+  width: 100%;
+  clip-path: polygon(0 var(--crop-height),calc(100% - var(--crop-width) - var(--crop-height)) var(--crop-height),calc(100% - var(--crop-width)) 0,100% 0,100% 100%,calc(var(--crop-width) + var(--crop-height)) 100%,calc(var(--crop-width)) calc(100% - var(--crop-height)),0 calc(100% - var(--crop-height)),0 calc(100% - var(--crop-height) - var(--border-width)),calc(var(--crop-width) + var(--border-width)) calc(100% - var(--crop-height) - var(--border-width)),calc(var(--crop-width) + var(--border-width) + var(--crop-height)) calc(100% - var(--border-width)),calc(100% - var(--border-width)) calc(100% - var(--border-width)),calc(100% - var(--border-width)) var(--border-width),calc(100% - var(--crop-width) + var(--border-width)) var(--border-width),calc(100% - var(--crop-width) + var(--border-width) - var(--crop-height)) calc(var(--border-width) + var(--crop-height)),var(--border-width) calc(var(--crop-height) + var(--border-width)),var(--border-width) calc(100% - var(--crop-height) - var(--border-width)),0 calc(100% - var(--crop-height) - var(--border-width)));
+}
+
+.button p {
+  position: relative;
+  text-align: center;
+  font-family: 'Neue Machina';
+  font-size: calc(20vw / var(--resizer) * 100);
+  font-style: normal;
+  font-weight: 700;
+  line-height: 140%;
+  transition: .5s ease-in-out;
+  z-index: 2;
+}
+
+.button .corner {
+  transition: .5s ease-in-out;
+}
+
+.button .corner-f {
+  -webkit-clip-path: polygon(100% 0,0 0,0 100%);
+  clip-path: polygon(100% 0,0 0,0 100%);
+  left: calc(var(--border-width) + calc(3vw / var(--resizer) * 100));
+  top: calc(var(--crop-height) + var(--border-width) + calc(3vw / var(--resizer) * 100));
+}
+
+.button .corner-s {
+  bottom: calc(var(--border-width) + calc(3vw / var(--resizer) * 100));
+  -webkit-clip-path: polygon(100% 0,100% 100%,0 100%);
+  clip-path: polygon(100% 0,100% 100%,0 100%);
+  right: calc(var(--border-width) + calc(3vw / var(--resizer) * 100));
+}
+
+.button .corner-s,
+.button .corner-f {
+  height: calc(15vw / var(--resizer) * 100);
+  position: absolute;
+  width: calc(15vw / var(--resizer) * 100);
+  animation: cornerAnimation 5s infinite;
+}
+
+.button.white .corner {
+  background-color: #000;
+}
+
+.button.transparent .corner {
+  background-color: #fff;
+}
+
+.button.white:hover .corner {
+  background-color: #000;
+}
+
+.button.white:hover p {
+  color: #fff;
+}
+
+
+.button:hover .glitch:after {
+  -webkit-animation: noise-anim 2s infinite linear alternate-reverse;
+  animation: noise-anim 2s infinite linear alternate-reverse;
+}
+
+.glitch:before {
+  clip: rect(0, calc(9999vw / var(--resizer) * 100), 0, 0);
+  content: attr(data-text);
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  text-shadow: calc(2vw / var(--resizer) * 100) 0 #05d003;
+}
+
+.button:hover .glitch:before{
+  -webkit-animation: noise-anim-2 3s infinite linear alternate-reverse;
+  animation: noise-anim-2 3s infinite linear alternate-reverse;
+}
+
+h1.glitch:before{
+  -webkit-animation: noise-anim-2 8s infinite linear alternate-reverse;
+  animation: noise-anim-2 9s infinite linear alternate-reverse;
+}
+
+h1.glitch:after {
+  -webkit-animation: noise-anim 7s infinite linear alternate-reverse;
+  animation: noise-anim 8s infinite linear alternate-reverse;
+}
+
+.heading:before {
+  transform: translateX(calc(-1vw / var(--resizer) * 100));
+  text-shadow: calc(1vw / var(--resizer) * 100) 0 #a10897;
+}
+
+.heading:after {
+  transform: translateX(calc(1vw / var(--resizer) * 100));
+  text-shadow: calc(-1vw / var(--resizer) * 100) 0 #05d003;
+}
+
+.button:hover .corner {
+  height: calc(550vw / var(--resizer) * 100);
+  width: calc(1100vw / var(--resizer) * 100);
+  animation: none;
+}
+
+.button.transparent:hover .corner {
+  background-color: #fff;
+}
+
+.button.transparent:hover p {
+  color: #000;
+}
+
+.menu {
+  position: absolute;
+  top: 50%;
+  left: -10%;
+  transform: rotate(90deg) translate(0%, 0%);
+}
+
+.menu ul {
+  display: flex;
+  list-style: none;
+}
+
+.menu ul li {
+  position: relative;
+  margin: 0 calc(110vw / var(--resizer) * 100) 0 0;
+  font-family: 'Neue Machina';
+  font-size: calc(23vw / var(--resizer) * 100);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%; 
+  color: rgba(255, 255, 255, 0.70);
+  transition: var(--transition);
+}
+
+.menu ul li::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  width: calc(25vw / var(--resizer) * 100);
+  height: calc(25vw / var(--resizer) * 100);
+  transform: translate(150%, -50%);
+  background: url('../img/png/star.png') center / cover no-repeat;
+}
+
+.menu ul li:last-child::after {
+  content: none;
+}
+
+.menu ul li.active,
+.menu ul li:hover {
+  color: #fff;
+}
+
+.menu ul li:last-child {
+  margin: 0;
+}
+
+.menu ul li a {
+  color: inherit;
+}
+
 /* body */
 body {
 	font-family: 'Mazzard';
 }
 
+/* Intro */
+.intro {
+  position: relative;
+  padding: calc(15vw / var(--resizer) * 100) calc(45vw / var(--resizer) * 100);
+  background: url('../img/bg/home.png') center / cover no-repeat;
+  min-height: 100vh;
+}
+
+.introHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.introHead nav {
+  display: flex;
+  align-items: center;
+}
+
+.introHead nav .navLink {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 calc(31vw / var(--resizer) * 100) 0 0;
+  transition: var(--transition);
+}
+
+.introHead nav .navLink:hover {
+  transform: scale(1.2);
+  -webkit-filter: drop-shadow(0 0 calc(10vw / var(--resizer) * 100) #222);
+  filter: drop-shadow(0 0 calc(10vw / var(--resizer) * 100) #222);
+}
+
+.introHead nav .navLink:nth-child(1) {
+  width: calc(26vw / var(--resizer) * 100);
+  height: calc(21.5vw / var(--resizer) * 100);
+}
+
+.introHead nav .navLink:nth-child(2) {
+  width: calc(27vw / var(--resizer) * 100);
+  height: calc(23vw / var(--resizer) * 100);
+}
+
+.introHead nav .navLink:nth-child(3) {
+  width: calc(30vw / var(--resizer) * 100);
+  height: calc(30vw / var(--resizer) * 100);
+}
+
+.introHead nav .navLink svg {
+  width: inherit;
+  height: inherit;
+}
+
+.introHead nav .navLink svg path {
+  fill: #fff;
+}
+
+.intro .body {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.intro h1 {
+  align-self: center;
+  font-family: "TTOctosquares-Regular";
+  font-size: calc(66vw / var(--resizer) * 100);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: calc(24vw / var(--resizer) * 100);
+  color: #FFF;
+}
+
+.intro .row {
+  display: flex;
+  margin: calc(39vw / var(--resizer) * 100) 0 0 0;
+  align-self: center;
+}
+
+.intro .row .button {
+  margin: 0 calc(15vw / var(--resizer) * 100);
+}
+
+/* Keyframes */
+@keyframes noise-anim {
+  0% {
+    clip: rect(calc(21vw / var(--resizer) * 100), calc(9999vw / var(--resizer) * 100), calc(57vw / var(--resizer) * 100), 0);
+  }
+  5% {
+    clip: rect(calc(21vw / var(--resizer) * 100), calc(9999vw / var(--resizer) * 100), calc(80vw / var(--resizer) * 100), 0);
+  }
+  10% {
+    clip: rect(calc(55vw / var(--resizer) * 100), calc(9999vw / var(--resizer) * 100), calc(69vw / var(--resizer) * 100), 0);
+  }
+  15.0% {
+    clip: rect(calc(22vw / var(--resizer) * 100), calc(9999vw / var(--resizer) * 100), calc(55vw / var(--resizer) * 100), 0);
+  }
+  20% {
+    clip: rect(calc(38vw / var(--resizer) * 100), calc(9999vw / var(--resizer) * 100), calc(69vw / var(--resizer) * 100), 0);
+  }
+  25% {
+    clip: rect(calc(31vw / var(--resizer) * 100), calc(9999vw / var(--resizer) * 100), calc(84vw / var(--resizer) * 100), 0);
+  }
+  30.0% {
+    clip: rect(calc(15vw / var(--resizer) * 100), calc(9999vw / var(--resizer) * 100), calc(28vw / var(--resizer) * 100), 0);
+  }
+  35% {
+    clip: rect(calc(16vw / var(--resizer) * 100), calc(9999vw / var(--resizer) * 100), calc(100vw / var(--resizer) * 100), 0);
+  }
+  40% {
+    clip: rect(calc(25vw / var(--resizer) * 100), calc(9999vw / var(--resizer) * 100), calc(10vw / var(--resizer) * 100), 0);
+  }
+  45% {
+    clip: rect(calc(19vw / var(--resizer) * 100), calc(9999vw / var(--resizer) * 100), calc(19vw / var(--resizer) * 100), 0);
+  }
+  50% {
+    clip: rect(calc(71vw / var(--resizer) * 100), calc(9999vw / var(--resizer) * 100), calc(35vw / var(--resizer) * 100), 0);
+  }
+  55.0% {
+    clip: rect(calc(89vw / var(--resizer) * 100), calc(9999vw / var(--resizer) * 100), calc(21vw / var(--resizer) * 100), 0);
+  }
+  60.0% {
+    clip: rect(calc(20vw / var(--resizer) * 100), calc(9999vw / var(--resizer) * 100), calc(34vw / var(--resizer) * 100), 0);
+  }
+  65% {
+    clip: rect(calc(22vw / var(--resizer) * 100), calc(9999vw / var(--resizer) * 100), calc(61vw / var(--resizer) * 100), 0);
+  }
+  70% {
+    clip: rect(calc(65vw / var(--resizer) * 100), calc(9999vw / var(--resizer) * 100), calc(28vw / var(--resizer) * 100), 0);
+  }
+  75% {
+    clip: rect(calc(82vw / var(--resizer) * 100), calc(9999vw / var(--resizer) * 100), calc(47vw / var(--resizer) * 100), 0);
+  }
+  80% {
+    clip: rect(calc(64vw / var(--resizer) * 100), calc(9999vw / var(--resizer) * 100), calc(11vw / var(--resizer) * 100), 0);
+  }
+  85.0% {
+    clip: rect(calc(63vw / var(--resizer) * 100), calc(9999vw / var(--resizer) * 100), calc(28vw / var(--resizer) * 100), 0);
+  }
+  90% {
+    clip: rect(calc(60vw / var(--resizer) * 100), calc(9999vw / var(--resizer) * 100), calc(60vw / var(--resizer) * 100), 0);
+  }
+  95% {
+    clip: rect(calc(9vw / var(--resizer) * 100), calc(9999vw / var(--resizer) * 100), calc(90vw / var(--resizer) * 100), 0);
+  }
+  100% {
+    clip: rect(calc(40vw / var(--resizer) * 100), calc(9999vw / var(--resizer) * 100), calc(62vw / var(--resizer) * 100), 0);
+  }
+}
+@-webkit-keyframes noise-anim {
+  0% {
+    clip: rect(calc(21vw / var(--resizer) * 100), calc(9999vw / var(--resizer) * 100), calc(57vw / var(--resizer) * 100), 0);
+  }
+  5% {
+    clip: rect(calc(21vw / var(--resizer) * 100), calc(9999vw / var(--resizer) * 100), calc(80vw / var(--resizer) * 100), 0);
+  }
+  10% {
+    clip: rect(calc(55vw / var(--resizer) * 100), calc(9999vw / var(--resizer) * 100), calc(69vw / var(--resizer) * 100), 0);
+  }
+  15.0% {
+    clip: rect(calc(22vw / var(--resizer) * 100), calc(9999vw / var(--resizer) * 100), calc(55vw / var(--resizer) * 100), 0);
+  }
+  20% {
+    clip: rect(calc(38vw / var(--resizer) * 100), calc(9999vw / var(--resizer) * 100), calc(69vw / var(--resizer) * 100), 0);
+  }
+  25% {
+    clip: rect(calc(31vw / var(--resizer) * 100), calc(9999vw / var(--resizer) * 100), calc(84vw / var(--resizer) * 100), 0);
+  }
+  30.0% {
+    clip: rect(calc(15vw / var(--resizer) * 100), calc(9999vw / var(--resizer) * 100), calc(28vw / var(--resizer) * 100), 0);
+  }
+  35% {
+    clip: rect(calc(16vw / var(--resizer) * 100), calc(9999vw / var(--resizer) * 100), calc(100vw / var(--resizer) * 100), 0);
+  }
+  40% {
+    clip: rect(calc(25vw / var(--resizer) * 100), calc(9999vw / var(--resizer) * 100), calc(10vw / var(--resizer) * 100), 0);
+  }
+  45% {
+    clip: rect(calc(19vw / var(--resizer) * 100), calc(9999vw / var(--resizer) * 100), calc(19vw / var(--resizer) * 100), 0);
+  }
+  50% {
+    clip: rect(calc(71vw / var(--resizer) * 100), calc(9999vw / var(--resizer) * 100), calc(35vw / var(--resizer) * 100), 0);
+  }
+  55.0% {
+    clip: rect(calc(89vw / var(--resizer) * 100), calc(9999vw / var(--resizer) * 100), calc(21vw / var(--resizer) * 100), 0);
+  }
+  60.0% {
+    clip: rect(calc(20vw / var(--resizer) * 100), calc(9999vw / var(--resizer) * 100), calc(34vw / var(--resizer) * 100), 0);
+  }
+  65% {
+    clip: rect(calc(22vw / var(--resizer) * 100), calc(9999vw / var(--resizer) * 100), calc(61vw / var(--resizer) * 100), 0);
+  }
+  70% {
+    clip: rect(calc(65vw / var(--resizer) * 100), calc(9999vw / var(--resizer) * 100), calc(28vw / var(--resizer) * 100), 0);
+  }
+  75% {
+    clip: rect(calc(82vw / var(--resizer) * 100), calc(9999vw / var(--resizer) * 100), calc(47vw / var(--resizer) * 100), 0);
+  }
+  80% {
+    clip: rect(calc(64vw / var(--resizer) * 100), calc(9999vw / var(--resizer) * 100), calc(11vw / var(--resizer) * 100), 0);
+  }
+  85.0% {
+    clip: rect(calc(63vw / var(--resizer) * 100), calc(9999vw / var(--resizer) * 100), calc(28vw / var(--resizer) * 100), 0);
+  }
+  90% {
+    clip: rect(calc(60vw / var(--resizer) * 100), calc(9999vw / var(--resizer) * 100), calc(60vw / var(--resizer) * 100), 0);
+  }
+  95% {
+    clip: rect(calc(9vw / var(--resizer) * 100), calc(9999vw / var(--resizer) * 100), calc(90vw / var(--resizer) * 100), 0);
+  }
+  100% {
+    clip: rect(calc(40vw / var(--resizer) * 100), calc(9999vw / var(--resizer) * 100), calc(62vw / var(--resizer) * 100), 0);
+  }
+}
+
+@keyframes noise-anim-2 {
+  0% {
+    clip: rect(calc(77vw / var(--resizer) * 100), calc(9999vw / var(--resizer) * 100), calc(63vw / var(--resizer) * 100), 0);
+  }
+  5% {
+    clip: rect(calc(7vw / var(--resizer) * 100), calc(9999vw / var(--resizer) * 100), calc(6vw / var(--resizer) * 100), 0);
+  }
+  10% {
+    clip: rect(calc(82vw / var(--resizer) * 100), calc(9999vw / var(--resizer) * 100), calc(78vw / var(--resizer) * 100), 0);
+  }
+  15.0% {
+    clip: rect(calc(85vw / var(--resizer) * 100), calc(9999vw / var(--resizer) * 100), calc(25vw / var(--resizer) * 100), 0);
+  }
+  20% {
+    clip: rect(calc(93vw / var(--resizer) * 100), calc(9999vw / var(--resizer) * 100), calc(38vw / var(--resizer) * 100), 0);
+  }
+  25% {
+    clip: rect(calc(70vw / var(--resizer) * 100), calc(9999vw / var(--resizer) * 100), calc(6vw / var(--resizer) * 100), 0);
+  }
+  30.0% {
+    clip: rect(calc(41vw / var(--resizer) * 100), calc(9999vw / var(--resizer) * 100), calc(72vw / var(--resizer) * 100), 0);
+  }
+  35% {
+    clip: rect(calc(9vw / var(--resizer) * 100), calc(9999vw / var(--resizer) * 100), calc(65vw / var(--resizer) * 100), 0);
+  }
+  40% {
+    clip: rect(calc(6vw / var(--resizer) * 100), calc(9999vw / var(--resizer) * 100), calc(34vw / var(--resizer) * 100), 0);
+  }
+  45% {
+    clip: rect(calc(84vw / var(--resizer) * 100), calc(9999vw / var(--resizer) * 100), calc(6vw / var(--resizer) * 100), 0);
+  }
+  50% {
+    clip: rect(calc(9vw / var(--resizer) * 100), calc(9999vw / var(--resizer) * 100), calc(45vw / var(--resizer) * 100), 0);
+  }
+  55.0% {
+    clip: rect(calc(7vw / var(--resizer) * 100), calc(9999vw / var(--resizer) * 100), calc(73vw / var(--resizer) * 100), 0);
+  }
+  60.0% {
+    clip: rect(calc(63vw / var(--resizer) * 100), calc(9999vw / var(--resizer) * 100), calc(20vw / var(--resizer) * 100), 0);
+  }
+  65% {
+    clip: rect(calc(55vw / var(--resizer) * 100), calc(9999vw / var(--resizer) * 100), calc(44vw / var(--resizer) * 100), 0);
+  }
+  70% {
+    clip: rect(calc(58vw / var(--resizer) * 100), calc(9999vw / var(--resizer) * 100), calc(11vw / var(--resizer) * 100), 0);
+  }
+  75% {
+    clip: rect(calc(61vw / var(--resizer) * 100), calc(9999vw / var(--resizer) * 100), calc(82vw / var(--resizer) * 100), 0);
+  }
+  80% {
+    clip: rect(calc(60vw / var(--resizer) * 100), calc(9999vw / var(--resizer) * 100), calc(9vw / var(--resizer) * 100), 0);
+  }
+  85.0% {
+    clip: rect(3calc(7vw / var(--resizer) * 100), calc(9999vw / var(--resizer) * 100), calc(69vw / var(--resizer) * 100), 0);
+  }
+  90% {
+    clip: rect(calc(32vw / var(--resizer) * 100), calc(9999vw / var(--resizer) * 100), calc(64vw / var(--resizer) * 100), 0);
+  }
+  95% {
+    clip: rect(calc(63vw / var(--resizer) * 100), calc(9999vw / var(--resizer) * 100), calc(16vw / var(--resizer) * 100), 0);
+  }
+  100% {
+    clip: rect(calc(47vw / var(--resizer) * 100), calc(9999vw / var(--resizer) * 100), calc(34vw / var(--resizer) * 100), 0);
+  }
+}
+@-webkit-keyframes noise-anim-2 {
+  0% {
+    clip: rect(calc(77vw / var(--resizer) * 100), calc(9999vw / var(--resizer) * 100), calc(63vw / var(--resizer) * 100), 0);
+  }
+  5% {
+    clip: rect(calc(7vw / var(--resizer) * 100), calc(9999vw / var(--resizer) * 100), calc(96vw / var(--resizer) * 100), 0);
+  }
+  10% {
+    clip: rect(calc(82vw / var(--resizer) * 100), calc(9999vw / var(--resizer) * 100), calc(78vw / var(--resizer) * 100), 0);
+  }
+  15.0% {
+    clip: rect(calc(85vw / var(--resizer) * 100), calc(9999vw / var(--resizer) * 100), calc(25vw / var(--resizer) * 100), 0);
+  }
+  20% {
+    clip: rect(calc(93vw / var(--resizer) * 100), calc(9999vw / var(--resizer) * 100), calc(38vw / var(--resizer) * 100), 0);
+  }
+  25% {
+    clip: rect(calc(70vw / var(--resizer) * 100), calc(9999vw / var(--resizer) * 100), calc(96vw / var(--resizer) * 100), 0);
+  }
+  30.0% {
+    clip: rect(calc(41vw / var(--resizer) * 100), calc(9999vw / var(--resizer) * 100), calc(72vw / var(--resizer) * 100), 0);
+  }
+  35% {
+    clip: rect(calc(39vw / var(--resizer) * 100), calc(9999vw / var(--resizer) * 100), calc(65vw / var(--resizer) * 100), 0);
+  }
+  40% {
+    clip: rect(calc(36vw / var(--resizer) * 100), calc(9999vw / var(--resizer) * 100), calc(34vw / var(--resizer) * 100), 0);
+  }
+  45% {
+    clip: rect(calc(84vw / var(--resizer) * 100), calc(9999vw / var(--resizer) * 100), 9calc(6vw / var(--resizer) * 100), 0);
+  }
+  50% {
+    clip: rect(calc(99vw / var(--resizer) * 100), calc(9999vw / var(--resizer) * 100), calc(45vw / var(--resizer) * 100), 0);
+  }
+  55.0% {
+    clip: rect(calc(37vw / var(--resizer) * 100), calc(9999vw / var(--resizer) * 100), calc(73vw / var(--resizer) * 100), 0);
+  }
+  60.0% {
+    clip: rect(calc(63vw / var(--resizer) * 100), calc(9999vw / var(--resizer) * 100), calc(20vw / var(--resizer) * 100), 0);
+  }
+  65% {
+    clip: rect(calc(55vw / var(--resizer) * 100), calc(9999vw / var(--resizer) * 100), calc(44vw / var(--resizer) * 100), 0);
+  }
+  70% {
+    clip: rect(calc(58vw / var(--resizer) * 100), calc(9999vw / var(--resizer) * 100), calc(11vw / var(--resizer) * 100), 0);
+  }
+  75% {
+    clip: rect(calc(61vw / var(--resizer) * 100), calc(9999vw / var(--resizer) * 100), calc(82vw / var(--resizer) * 100), 0);
+  }
+  80% {
+    clip: rect(calc(60vw / var(--resizer) * 100), calc(9999vw / var(--resizer) * 100), calc(9vw / var(--resizer) * 100), 0);
+  }
+  85.0% {
+    clip: rect(calc(37vw / var(--resizer) * 100), calc(9999vw / var(--resizer) * 100), calc(69vw / var(--resizer) * 100), 0);
+  }
+  90% {
+    clip: rect(calc(32vw / var(--resizer) * 100), calc(9999vw / var(--resizer) * 100), calc(64vw / var(--resizer) * 100), 0);
+  }
+  95% {
+    clip: rect(calc(63vw / var(--resizer) * 100), calc(9999vw / var(--resizer) * 100), calc(16vw / var(--resizer) * 100), 0);
+  }
+  100% {
+    clip: rect(calc(47vw / var(--resizer) * 100), calc(9999vw / var(--resizer) * 100), calc(34vw / var(--resizer) * 100), 0);
+  }
+}
+
+@keyframes cornerAnimation {
+  0% {
+    transform: skewX(0) rotate(0);
+  }
+  25% {
+    transform: skewX(5deg) rotate(5deg);
+  }
+  50% {
+    transform: skewX(-5deg) rotate(-5deg);
+  }
+  75% {
+    transform: skewX(5deg) rotate(5deg);
+  }
+  100% {
+    transform: skewX(0) rotate(0);
+  }
+}

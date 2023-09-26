@@ -294,6 +294,10 @@ h1.glitch:after {
   color: inherit;
 }
 
+.burger {
+  display: none;
+}
+
 /* body */
 body {
 	font-family: 'Mazzard';

@@ -1,0 +1,147 @@
+@media screen and (max-width: 768px) {
+	/* Заготовки */
+	:root {
+    --crop-width: 30px;
+    --crop-height: 5px;
+    --border-width: 2px;
+	}
+
+	.logotype {
+		width: 250px;
+		height: 40px;
+	}
+
+	.burger {
+		display: flex;
+		transform: rotate(180deg) scale(0.7);
+	}
+
+	label {
+		display:flex;
+		flex-direction:column;
+		width:70px;
+		cursor:pointer;
+	}
+
+	label span {
+		background: #fff;
+		border-radius:10px;
+		height:7px;
+		margin: 7px 0;
+		transition: .4s  cubic-bezier(0.68, -0.6, 0.32, 1.6);
+	}
+
+	span:nth-of-type(1) {
+		width:50%;
+	}
+
+	span:nth-of-type(2) {
+		width:100%;
+	}
+
+	span:nth-of-type(3) {
+		width:75%;
+	}
+
+	input[type="checkbox"] {
+		display:none;
+	}
+
+	input[type="checkbox"]:checked ~ span:nth-of-type(1) {
+		transform-origin:bottom;
+		transform:rotatez(45deg) translate(8px,0px)
+	}
+
+	input[type="checkbox"]:checked ~ span:nth-of-type(2) {
+		transform-origin:top;
+		transform:rotatez(-45deg)
+	}
+
+	input[type="checkbox"]:checked ~ span:nth-of-type(3) {
+		transform-origin:bottom;
+		width:50%;
+		transform: translate(30px,-11px) rotatez(45deg);
+	}
+
+	.button {
+    min-width: 170px;
+		padding: 25px 50px 20px 50px;
+	}
+
+	.button .glitch {
+		text-transform: capitalize;
+	}
+
+	.button .corner-s, .button .corner-f {
+    height: 15px;
+    width: 15px;
+	}
+
+	.button .corner-f {
+    -webkit-clip-path: polygon(100% 0,0 0,0 100%);
+    clip-path: polygon(100% 0,0 0,0 100%);
+    left: calc(var(--border-width) + 3px);
+    top: calc(var(--crop-height) + var(--border-width) + 3px);
+	}
+
+	.button .corner-s {
+    bottom: calc(var(--border-width) + 3px);
+    -webkit-clip-path: polygon(100% 0,100% 100%,0 100%);
+    clip-path: polygon(100% 0,100% 100%,0 100%);
+    right: calc(var(--border-width) + 3px);
+	}
+
+	.button p {
+    font-size: 20px;
+	}
+
+	.glitch:after {
+		-webkit-animation: noise-anim 2s infinite linear alternate-reverse;
+		animation: noise-anim 2s infinite linear alternate-reverse;
+	}
+
+	.glitch:before{
+		-webkit-animation: noise-anim-2 3s infinite linear alternate-reverse;
+		animation: noise-anim-2 3s infinite linear alternate-reverse;
+	}
+
+	.menu {
+		display: none;
+	}
+
+	/* Intro */
+	.intro {
+    position: relative;
+    padding: 30px 25px;
+    background: url(../img/bg/home.png) center / cover no-repeat;
+    min-height: 100vh;
+	}
+
+	.introHead nav {
+		display: none;
+	}
+
+	.intro h1 {
+		text-align: center;
+    font-size: 66px;
+    letter-spacing: 20px;
+	}
+
+	.intro .row {
+		flex-direction: column-reverse;
+    margin: 70px 0 0 0;
+	}
+
+	.intro .row .button {
+		margin: 0;
+		align-self: center;
+	}
+
+	.intro .row .button:last-child {
+    margin: 0 0 30px 0;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	
+}

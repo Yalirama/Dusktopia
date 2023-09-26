@@ -9,3 +9,14 @@ burger.addEventListener('click', () => {
 		intro.classList.remove('active')
 	}
 })
+
+const factionsItems = document.querySelectorAll('.factionsItem');
+
+factionsItems.forEach(item => {
+		item.addEventListener('mouseover', () => {
+				factionsItems.forEach(otherItem => {
+						otherItem.classList.remove('active')
+				})
+				item.classList.add('active')
+		})
+})

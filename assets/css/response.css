@@ -271,6 +271,8 @@
 	.factions {
 		justify-content: center;
     padding: 30px 25px;
+		background: url('../img/bg/factions-mob.png') center / cover no-repeat;
+		background-attachment: local;
 	}
 
 	.factionsRow {
@@ -288,13 +290,16 @@
 	.factionsTitle h2 {
 		font-size: 55px;
 		line-height: 100%;
+		letter-spacing: 10px;
 	}
 
 	.factionsItems {
 		margin: 84px 0 0 0;
 	}
 
-	.factionsItem {
+	.factionsItem,
+	.factionsItem:last-child {
+		margin: 20px 0 0 0;
 		align-self: center;
 		width: 100%;
 	}
@@ -427,5 +432,44 @@
 
 	.headerNavRow {
 		margin: 150px 0 0 0;
+	}
+
+	/* Factions */
+	.factionsTitle h2 {
+		font-size: 44px;
+		letter-spacing: 8.4px;
+	}
+
+	.factionsItemTitle {
+    margin: 0 20px 0 0;
+    font-size: 19px;
+	}
+
+	.factionsTitle, .factionsItems {
+		width: 100%;
+	}
+
+	.factionsItemF, .factionsItemF svg {
+		width: 61px;
+    height: 65px;
+	}
+
+	.factionsItems::after {
+    width: 7px;
+    transform: translateX(-25px);
+	}
+
+	.factionsItemImg::before,
+	.factionsItemImg::after {
+    width: 18px;
+    height: 18px;
+	}
+
+	.factionsItemBody {
+		width: 77%;
+	}
+
+	.factionsItemBody .button {
+		zoom: 66%;
 	}
 }

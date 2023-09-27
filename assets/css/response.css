@@ -266,6 +266,104 @@
 		visibility: visible;
 		z-index: 9;
 	}
+
+	/* Factions */
+	.factions {
+		justify-content: center;
+    padding: 30px 25px;
+	}
+
+	.factionsRow {
+		flex-direction: column;
+		justify-content: center;
+		width: 100%;
+	}
+
+	.factionsTitle,
+	.factionsItems {
+    width: 85%;
+    align-self: center;
+	}
+
+	.factionsTitle h2 {
+		font-size: 55px;
+		line-height: 100%;
+	}
+
+	.factionsItems {
+		margin: 84px 0 0 0;
+	}
+
+	.factionsItem {
+		align-self: center;
+		width: 100%;
+	}
+
+	.factionsItem.active {
+		z-index: 9;
+	}
+
+	.factionsItemTitle {
+    margin: 0 29px 0 0;
+    font-size: 30px;
+	}
+	.factionsItemF,
+	.factionsItemF svg {
+    width: 91px;
+    height: 95px;
+	}
+
+	.factionsItemBody {
+		width: 85%;
+		max-height: 0;
+		overflow: visible;
+	}
+
+	.factionsItem.active .factionsItemBody {
+		max-height: 500px;
+		overflow: visible;
+	}
+
+	.factionsItemImg {
+    width: 100%;
+    height: auto;
+	}
+
+	.factionsItemImg p, .factionsItemImg img {
+		display: flex;
+	}
+
+	.factionsItemBody .button {
+    top: 90%;
+    left: 10%;
+		z-index: 9;
+	}
+
+	.factionsItemImg::before {
+    right: 5px;
+    top: 5px;
+    width: 35px;
+    height: 35px;
+	}
+
+	.factionsItemImg::after {
+    left: 5px;
+    bottom: 5px;
+    width: 35px;
+    height: 35px;
+	}
+
+	.factionsItems::after {
+    top: 30px;
+    right: 0;
+    width: 10px;
+    transform: translateX(-37px);
+    height: 90%;
+	}
+
+	.factionsItem.mod .factionsItemF, .factionsItem.mod .factionsItemF {
+		right: 3px;
+	}
 }
 
 @media screen and (max-width: 600px) {

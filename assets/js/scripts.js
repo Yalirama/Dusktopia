@@ -5,8 +5,10 @@ const burger = document.querySelector('.burger'),
 burger.addEventListener('click', () => {
 	if (check.checked) {
 		intro.classList.add('active')
+    document.body.style.overflow = 'hidden'
 	} else {
 		intro.classList.remove('active')
+    document.body.style.overflow = ''
 	}
 })
 

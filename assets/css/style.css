@@ -731,6 +731,12 @@ body {
 .factionsMoreItem img {
   width: calc(200vw / var(--resizer) * 100);
   height: calc(160vw / var(--resizer) * 100);
+  transition: var(--transition);
+}
+
+.factionsMoreItem:hover img {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 10px rgba(225, 225, 225, 0.6));
 }
 
 .factionsMoreF {

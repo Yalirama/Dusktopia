@@ -321,7 +321,6 @@
 	.factionsItemBody {
 		width: 85%;
 		max-height: 0;
-		overflow: visible;
 	}
 
 	.factionsItem.active .factionsItemBody {
@@ -368,6 +367,60 @@
 
 	.factionsItem.mod .factionsItemF, .factionsItem.mod .factionsItemF {
 		right: 3px;
+	}
+
+	.factionsMoreInner {
+		padding: 35px 25px;
+	}
+
+	.factionsMoreImg {
+		display: flex;
+    margin: 150px 0 100px 0;
+		max-width: 90%;
+    height: auto;
+		align-self: center;
+	}
+
+	.factionsMoreImg img {
+		width: 100%;
+	}
+
+	.factions .factionsMoreTitle {
+    margin: 0 0 20px 0;
+    font-size: 20px;
+		width: 90%;
+    max-width: none;
+		align-self: center;
+	}
+
+	.factionsMoreF {
+		display: none;
+	}
+
+	.factionsMoreRow {
+		margin: 51px 0 0 0;
+	}
+
+	.factionsMoreItem {
+    margin: 0 0 30px 0;
+		padding: 13% 0;
+    width: 48%;
+    height: auto;
+    border-width: 2px;
+    backdrop-filter: blur(50px);
+	}
+
+	.factionsMoreItem p, .factionsMoreItem img {
+    width: 200px;
+    height: 160px;
+	}
+
+	.factionsMoreInner.active {
+		overflow-y: scroll;
+	}
+
+	.factionsMoreItem:nth-child(even) {
+		position: static;
 	}
 }
 
@@ -471,5 +524,22 @@
 
 	.factionsItemBody .button {
 		zoom: 66%;
+	}
+
+	.factionsMoreInnerHead .button {
+		zoom: 80%;
+	}
+
+	.factionsMoreImg {
+		margin: 100px 0 40px 0;
+	}
+
+	.factions .factionsMoreTitle {
+		font-size: 13px;
+	}
+
+	.factionsMoreItem {
+		padding: 20% 0;
+		width: 100%;
 	}
 }

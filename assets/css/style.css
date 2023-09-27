@@ -32,7 +32,7 @@
 }
 
 @font-face {
-  font-family: 'Mazzard Bold';
+  font-family: 'Mazzard';
   src: url('../fonts/MazzardH-Bold.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
@@ -40,7 +40,7 @@
 }
 
 @font-face {
-  font-family: 'Mazzard Mixed';
+  font-family: 'Mazzard';
   src: url('../fonts/MazzardM-Bold.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
@@ -66,13 +66,23 @@ a {
   text-decoration: none;  
 }
 
+/* body */
+body {
+	font-family: 'Mazzard';
+  overflow-x: hidden;
+}
+
 /* Заготовки */
 :root {
   --resizer: 1800;
-  --transition: .4s all linear;
+  --transition: all .4s linear;
   --crop-width: calc(30vw / var(--resizer) * 100);
   --crop-height: calc(5vw / var(--resizer) * 100);
   --border-width: calc(2vw / var(--resizer) * 100);
+
+  --crop2-width: calc(90vw / var(--resizer) * 100);
+  --crop2-height: calc(15vw / var(--resizer) * 100);
+  --border2-width: calc(6vw / var(--resizer) * 100);
 }
 
 .logotype {
@@ -301,10 +311,11 @@ h1.glitch:after {
 }
 
 .menu {
+  display: flex;
   position: absolute;
   top: 50%;
-  left: -10%;
-  transform: rotate(90deg) translate(0%, 0%);
+  left: 3%;
+  transform: translate(-50%, -50%) rotate(90deg);
 }
 
 .menu ul {
@@ -356,10 +367,35 @@ h1.glitch:after {
   display: none;
 }
 
-/* body */
-body {
-	font-family: 'Mazzard';
+.headTitle {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  z-index: 9;
 }
+
+.headTitle span {
+  font-family: 'Mazzard';
+  font-size: calc(19vw / var(--resizer) * 100);
+  font-style: normal;
+  font-weight: 700;
+  line-height: 140%;
+  align-self: center;
+  opacity: 0.95;
+  background: linear-gradient(90deg, #FFB800 0%, #FFBAC3 35.62%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.headTitle svg {
+  position: relative;
+  bottom: calc(5vw / var(--resizer) * 100);
+  width: 100%;
+  min-width: calc(209vw / var(--resizer) * 100);
+  height: auto;
+}
+
 
 /* Intro */
 .intro {
@@ -531,9 +567,9 @@ body {
   margin: 0;
 }
 
-.factionsItem.mod .factionsItemF,
-.factionsItem.mod .factionsItemF {
-  right: calc(3vw / var(--resizer) * 100);
+.factionsItem:nth-child(even) .factionsItemF {
+  transform: rotate(180deg);
+  right: calc(-7vw / var(--resizer) * 100);
 }
 
 .factionsItem:last-child {
@@ -768,21 +804,179 @@ body {
   z-index: 99;
 }
 
+/* Roadmap */
+.roadmap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: calc(139vw / var(--resizer) * 100) calc(45vw / var(--resizer) * 100) calc(246vw / var(--resizer) * 100) calc(155vw / var(--resizer) * 100);
+  min-height: 200vh;
+  align-items: flex-start;
+  background: url('../img/bg/roadmap.png') center / cover no-repeat;
+}
 
+.factions-roadmap {
+  position: absolute;
+  top: 190vh;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: calc(300vw / var(--resizer) * 100);
+}
 
+.factions-roadmap::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 120%;
+  height: inherit;
+  background: linear-gradient(200deg, #0A1418 -20.47%, #352F46 112.47%);
+  filter: blur(calc(64vw / var(--resizer) * 100));
+  z-index: 2;
+  overflow: hidden;
+}
 
+.factions-roadmap::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 120%;
+  height: inherit;
+  transform: rotate();
+  background: linear-gradient(200deg, #0A1418 -20.47%, #352F46 112.47%);
+  filter: blur(calc(64vw / var(--resizer) * 100));
+  z-index: 2;
+  overflow: hidden;
+}
 
+.roadmap .headTitle span {
+  padding: 0 calc(10vw / var(--resizer) * 100) 0 0;
+  align-self: flex-end;
+}
 
+.roadmap h2 {
+  position: relative;
+  font-family: 'TTOctosquares-Regular';
+  font-size: calc(74vw / var(--resizer) * 100);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: calc(24vw / var(--resizer) * 100);
+  color: #FFF;
+  z-index: 2;
+}
 
+.roadmap h2 span {
+  letter-spacing: calc(-20vw / var(--resizer) * 100);
+}
 
+.roadmapItems {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: calc(87vw / var(--resizer) * 100) 0 0 0;
+}
 
+.roadmapItems::after {
+  content: '';
+  position: absolute;
+  top: calc(100vw / var(--resizer) * 100);
+  left: calc(43vw / var(--resizer) * 100);
+  width: calc(10vw / var(--resizer) * 100);
+  height: 80%;
+  background-color: #fff;
+  z-index: 1;
+}
 
+.roadmapItem {
+  display: flex;
+  margin: 0 0 calc(50vw / var(--resizer) * 100) 0;
+  align-items: center;
+  transition: var(--transition);
+}
 
+.roadmapItem:nth-child(even) .roadmapItemF {
+  transform: rotate(180deg);
+  right: calc(-6vw / var(--resizer) * 100);
+}
 
+.roadmapItemF,
+.roadmapItemF svg {
+  position: relative;
+  width: calc(91vw / var(--resizer) * 100);
+  height: calc(95vw / var(--resizer) * 100);
+  z-index: 2;
+  transition: var(--transition);
+}
 
+.roadmapItemBody {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 0 0 calc(45vw / var(--resizer) * 100);
+  padding: calc(45vw / var(--resizer) * 100) calc(40vw / var(--resizer) * 100) calc(40vw / var(--resizer) * 100) calc(40vw / var(--resizer) * 100);
+  width: calc(500vw / var(--resizer) * 100);
+  height: auto;
+  clip-path: polygon(16.4% 0%, 22.8% 10.8%, 100% 11.3%, 99.8% 87.5%, 84.7% 88.3%, 78.8% 100%, 0% 100%, 0% 0%);
+  background: linear-gradient(250deg, rgba(255, 255, 255, 0.00) -24.77%, rgba(255, 255, 255, 0.15) 105.99%);
+  backdrop-filter: blur(calc(5vw / var(--resizer) * 100));
+  border-image: linear-gradient(to right bottom, rgba(128, 128, 128, 0.7), transparent, transparent, rgb(255, 255, 255)) 1 / 1 / 0 stretch;
+  border-style: solid;
+  border-width: calc(2vw / var(--resizer) * 100);
+  cursor: pointer;
+  overflow: hidden;
+  transition: var(--transition);
+}
 
+.roadmapItemBody:hover {
+  width: calc(550vw / var(--resizer) * 100);
+  background: linear-gradient(250deg, rgba(255, 255, 255, 0.70) -24.77%, rgba(255, 255, 255, 0.85) 105.99%);
+  clip-path: polygon(32.7% 0%, 35.9% 3.8%, 100% 4%, 100% 95%, 63.3% 95.3%, 60.2% 100%, 0% 100%, 0% 0%);
+}
 
+.roadmapItemNum {
+  margin: 0 0 calc(5vw / var(--resizer) * 100) 0;
+  font-family: 'Neue Machina';
+  font-size: calc(41vw / var(--resizer) * 100);
+  font-style: normal;
+  font-weight: 700;
+  line-height: 140%;
+  color: #FFF;
+  transition: var(--transition);
+}
 
+.roadmapItemBody:hover .roadmapItemNum {
+  font-size: calc(52vw / var(--resizer) * 100);
+  color: #000;
+}
+
+.roadmapItemTitle,
+.roadmapItemText {
+  font-family: 'Mazzard';
+  font-size: calc(14vw / var(--resizer) * 100);
+  font-style: normal;
+  line-height: 140%;
+  color: #FFF;
+  transition: var(--transition);
+}
+
+.roadmapItemBody:hover .roadmapItemTitle,
+.roadmapItemBody:hover .roadmapItemText {
+  font-size: calc(16vw / var(--resizer) * 100);
+  color: #000;
+}
+
+.roadmapItemTitle {
+  font-weight: 700;
+}
+
+.roadmapItemText {
+  margin: calc(5vw / var(--resizer) * 100) 0 0 0;
+  font-weight: 400;
+}
 
 
 

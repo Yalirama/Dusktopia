@@ -365,8 +365,8 @@
     height: 90%;
 	}
 
-	.factionsItem.mod .factionsItemF, .factionsItem.mod .factionsItemF {
-		right: 3px;
+	.factionsItem:nth-child(even) .factionsItemF {
+		right: -7px;
 	}
 
 	.factionsMoreInner {
@@ -505,6 +505,10 @@
 	.factionsItemF, .factionsItemF svg {
 		width: 61px;
     height: 65px;
+	}
+
+	.factionsItem:nth-child(even) .factionsItemF {
+    right: -5px;
 	}
 
 	.factionsItems::after {

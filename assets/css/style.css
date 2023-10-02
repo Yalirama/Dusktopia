@@ -255,7 +255,6 @@ body {
   color: #fff;
 }
 
-
 .button:hover .glitch:after {
   -webkit-animation: noise-anim 2s infinite linear alternate-reverse;
   animation: noise-anim 2s infinite linear alternate-reverse;
@@ -389,11 +388,10 @@ h1.glitch:after {
 }
 
 .headTitle svg {
-  position: relative;
-  bottom: calc(5vw / var(--resizer) * 100);
-  width: 100%;
-  min-width: calc(209vw / var(--resizer) * 100);
+  min-width: calc(180vw / var(--resizer) * 100);
   height: auto;
+  align-self: center;
+  transform: scaleY(-1);
 }
 
 
@@ -873,6 +871,12 @@ h1.glitch:after {
   letter-spacing: calc(-20vw / var(--resizer) * 100);
 }
 
+.roadmap .headTitle svg {
+  position: relative;
+  bottom: calc(5vw / var(--resizer) * 100);
+  transform: none;
+}
+
 .roadmapItems {
   position: relative;
   display: flex;
@@ -913,6 +917,7 @@ h1.glitch:after {
 }
 
 .roadmapItemBody {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -935,6 +940,34 @@ h1.glitch:after {
   width: calc(550vw / var(--resizer) * 100);
   background: linear-gradient(250deg, rgba(255, 255, 255, 0.70) -24.77%, rgba(255, 255, 255, 0.85) 105.99%);
   clip-path: polygon(32.7% 0%, 35.9% 3.8%, 100% 4%, 100% 95%, 63.3% 95.3%, 60.2% 100%, 0% 100%, 0% 0%);
+}
+
+.roadmapItemBody .corner {
+  position: absolute;
+  background-color: #fff;
+  width: calc(25vw / var(--resizer) * 100);
+  height: calc(25vw / var(--resizer) * 100);
+  transition: var(--transition);
+}
+
+.roadmapItemBody .corner-f {
+  right: auto;
+  top: auto;
+  bottom: calc(5vw / var(--resizer) * 100);
+  left: calc(5vw / var(--resizer) * 100);
+  clip-path: polygon(100% 100%, 0% 100%, 0% 0%);
+}
+
+.roadmapItemBody .corner-s {
+  right: calc(5vw / var(--resizer) * 100);
+  top: calc(30vw / var(--resizer) * 100);
+  bottom: auto;
+  left: auto;
+  clip-path: polygon(100% 100%, 100% 0%, 0% 0%);
+}
+
+.roadmapItemBody:hover .corner-s {
+  top: calc(15vw / var(--resizer) * 100);
 }
 
 .roadmapItemNum {
@@ -978,11 +1011,79 @@ h1.glitch:after {
   font-weight: 400;
 }
 
+/* Collaborations */
+.collaborations {
+  position: relative;
+  background: url('../img/bg/collaborations.png') center / cover no-repeat;
+  min-height: 70vh;
+}
 
+.collaborations h2 {
+  margin: calc(34vw / var(--resizer) * 100) 0 0 0;
+  text-align: center;
+  font-size: calc(74vw / var(--resizer) * 100);
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: calc(13.4vw / var(--resizer) * 100);
+  color: #FFF;
+}
 
+.collaborationsRow {
+  display: flex;
+  justify-content: center;
+  margin: calc(60vw / var(--resizer) * 100) 0 0 0;
+}
 
+.collaborationsItem {
+  position: relative;
+  margin: 0 calc(25vw / var(--resizer) * 100);
+  width: calc(241vw / var(--resizer) * 100);
+  height: calc(113vw / var(--resizer) * 100);
+  background: linear-gradient(250deg, rgba(255, 255, 255, 0.04) -24.77%, rgba(255, 255, 255, 0.30) 105.99%);
+  clip-path: polygon(22.2% 0%, 28.9% 7.5%, 100% 7%, 100% 92%, 81.9% 92.3%, 75.9% 100%, 0% 100%, 0% 0%);
+  transition: var(--transition);
+}
 
+.collaborationsItem:hover {
+  clip-path: polygon(78.3% 0%, 87.6% 6.5%, 100% 7%, 100% 100%, 20.3% 93.5%, 12.9% 100%, 0% 100%, 0% 9.3%);
+}
 
+.collaborationsItem .corner {
+  position: absolute;
+  background-color: #fff;
+  width: calc(15vw / var(--resizer) * 100);
+  height: calc(15vw / var(--resizer) * 100);
+}
+
+.collaborationsItem .corner-f {
+  right: auto;
+  top: auto;
+  bottom: calc(5vw / var(--resizer) * 100);
+  left: calc(5vw / var(--resizer) * 100);
+  clip-path: polygon(100% 100%, 0% 100%, 0% 0%);
+}
+
+.collaborationsItem .corner-s {
+  right: calc(5vw / var(--resizer) * 100);
+  top: calc(13vw / var(--resizer) * 100);
+  bottom: auto;
+  left: auto;
+  clip-path: polygon(100% 100%, 100% 0%, 0% 0%);
+}
+
+.collaborationsItem p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: #FFF;
+  text-align: center;
+  font-size: calc(25vw / var(--resizer) * 100);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%;
+  transform: translate(-50%, -25%);
+  text-transform: uppercase;
+}
 
 /* Keyframes */
 @keyframes noise-anim {

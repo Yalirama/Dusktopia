@@ -1089,6 +1089,172 @@ h1.glitch:after {
   text-transform: uppercase;
 }
 
+/* FAQ */
+.faq {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 0 calc(45vw / var(--resizer) * 100);
+  background: url('../img/bg/faq.png') top / cover no-repeat;
+  min-height: 100vh;
+}
+
+.faq h2 {
+  margin: calc(34vw / var(--resizer) * 100) 0 0 0;
+  align-self: center;
+  width: calc(800vw / var(--resizer) * 100);
+  text-align: center;
+  font-size: calc(74vw / var(--resizer) * 100);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: calc(13.44vw / var(--resizer) * 100);
+  color: #FFF;
+}
+
+.faq h2 svg {
+  width: calc(55vw / var(--resizer) * 100);
+  height: calc(55vw / var(--resizer) * 100);
+}
+
+.faqRow {
+  display: flex;
+  width: 95%;
+  align-self: flex-end;
+  margin: calc(90vw / var(--resizer) * 100) 0 0 0;
+  padding: calc(5vw / var(--resizer) * 100) 0 0 0;
+  background: linear-gradient(238deg, rgba(255, 255, 255, 0.00) -7.92%, rgba(255, 255, 255, 0.15) 33.87%);
+  clip-path: polygon(4.9% 0%, 6.3% 2.3%, 100% 3%, 100% 96.5%, 94.9% 96.5%, 93.1% 100%, 0% 100%, 0.1% 0%);
+  backdrop-filter: blur(calc(26vw / var(--resizer) * 100));
+  border: calc(2vw / var(--resizer) * 100) solid rgba(255, 255, 255, 0.33)
+}
+
+.faqItems {
+  display: flex;
+  flex-direction: column;
+  padding: calc(40vw / var(--resizer) * 100) 0 0 0;
+  width: 33%;
+  border-right: calc(2vw / var(--resizer) * 100) solid #fff;
+}
+
+.faqItems:last-child {
+  border: none;
+}
+
+.faqItems .faqItem {
+  padding: calc(20vw / var(--resizer) * 100) calc(30vw / var(--resizer) * 100);
+  border-bottom: calc(2vw / var(--resizer) * 100) solid #fff;
+  flex: 1 1 auto;
+}
+
+.faqItems .faqItem:last-child {
+  border: none;
+}
+
+.faqItem h3 {
+  margin: 0 0 calc(15vw / var(--resizer) * 100) 0;
+  font-size: calc(31vw / var(--resizer) * 100);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 117.8%;
+  letter-spacing: calc(3vw / var(--resizer) * 100);
+  text-transform: uppercase;
+  color: #FFF;
+}
+
+.faqItem p {
+  font-family: 'Mazzard';
+  font-size: calc(14vw / var(--resizer) * 100);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+  color: #FFF;
+}
+
+.faqItem span {
+  font-family: 'Mazzard';
+  font-size: inherit;
+  font-weight: 700;
+  opacity: 0.95;
+  color: #FFF;
+}
+
+.faqItem h4 {
+  margin: calc(5vw / var(--resizer) * 100) 0 0 0;
+  font-family: 'Mazzard';
+  font-size: calc(24vw / var(--resizer) * 100);
+  font-style: normal;
+  font-weight: 700;
+  line-height: 140%;
+  color: #FFF;
+  opacity: 0.95;
+}
+
+.faqItemDe {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: calc(2vw / var(--resizer) * 100) solid #fff;
+}
+
+.faqItemDe div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: calc(10vw / var(--resizer) * 100) 0;
+  width: 33%;
+  border-right: calc(2vw / var(--resizer) * 100) solid #fff;
+}
+
+.faqItemDe div:nth-child(1) svg {
+  width: calc(63vw / var(--resizer) * 100);
+  height: calc(25vw / var(--resizer) * 100);
+}
+
+.faqItemDe div:nth-child(2) svg {
+  margin: 0 calc(2.5vw / var(--resizer) * 100);
+  width: calc(26.51vw / var(--resizer) * 100);
+  height: calc(26.51vw / var(--resizer) * 100);
+}
+
+.faqItemDe div:nth-child(3) svg {
+  margin: 0 calc(1vw / var(--resizer) * 100);
+  width: calc(30vw / var(--resizer) * 100);
+  height: calc(19vw / var(--resizer) * 100);
+  border: none;
+}
+
+.faqItemDc {
+  display: flex;
+}
+
+.faqItemDc div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: calc(20vw / var(--resizer) * 100);
+}
+
+.faqItemDc div:first-child {
+  width: 30%;
+  border-right: calc(2vw / var(--resizer) * 100) solid #fff;
+}
+
+.faqItemDc div:first-child svg {
+  width: calc(69vw / var(--resizer) * 100);
+  height: calc(69vw / var(--resizer) * 100);
+}
+
+.faqItemDc div:last-child {
+  width: 70%;
+}
+
+.faqItemDc:last-child svg {
+  margin: 0 calc(5vw / var(--resizer) * 100);
+  width: calc(45vw / var(--resizer) * 100);
+  height: calc(45vw / var(--resizer) * 100);
+}
+
 /* Keyframes */
 @keyframes noise-anim {
   0% {

@@ -1094,7 +1094,7 @@ h1.glitch:after {
   position: relative;
   display: flex;
   flex-direction: column;
-  padding: 0 calc(45vw / var(--resizer) * 100);
+  padding: calc(33vw / var(--resizer) * 100) calc(45vw / var(--resizer) * 100);
   background: url('../img/bg/faq.png') top / cover no-repeat;
   min-height: 100vh;
 }
@@ -1217,11 +1217,14 @@ h1.glitch:after {
   height: calc(26.51vw / var(--resizer) * 100);
 }
 
+.faqItemDe div:nth-child(3) {
+  border: none;
+}
+
 .faqItemDe div:nth-child(3) svg {
   margin: 0 calc(1vw / var(--resizer) * 100);
   width: calc(30vw / var(--resizer) * 100);
   height: calc(19vw / var(--resizer) * 100);
-  border: none;
 }
 
 .faqItemDc {

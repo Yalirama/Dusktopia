@@ -562,6 +562,103 @@
     right: 5px;
     top: 11px;
 	}
+
+	/* FAQ */
+	.faq {
+		bottom: 1px;
+    padding: 33px 45px;
+    background: url(../img/bg/faq.png) top / cover no-repeat;
+    min-height: 100vh;
+	}
+
+	.faq h2 {
+    margin: 34px 0 0 0;
+    width: 800px;
+    font-size: 54px;
+    letter-spacing: 8.5px;
+	}
+
+	.faqRow {
+    margin: 90px 0 0 0;
+    padding: 5px 0 0 0;
+		width: 100%;
+    backdrop-filter: blur(26px);
+    border: 2px solid rgba(255, 255, 255, 0.33);
+		flex-wrap: wrap;
+		clip-path: polygon(16.6% 0%, 18.8% 0.8%, 100% 0.8%, 100% 99.3%, 79.5% 99.3%, 78.2% 100%, 0% 100%, 0.1% 0%);
+	}
+
+	.faqItems {
+    padding: 40px 0 0 0;
+    width: 100%;
+    border-bottom: 2px solid #fff;
+	}
+
+	.faqItems .faqItem {
+    padding: 20px 30px;
+    border-bottom: 2px solid #fff;
+	}
+
+	.faqItemDe {
+		border-bottom: 2px solid #fff;
+	}
+
+	.faqItem h3 {
+		margin: 0 0 15px 0;
+		font-size: 31px;
+		letter-spacing: 3px;
+	}
+
+	.faqItem p {
+    font-size: 20px;
+	}
+
+	.faqItem h4 {
+    margin: 5px 0 0 0;
+    font-size: 24px;
+	}
+
+	.faqItemDe div {
+    padding: 10px 0;
+    width: 33%;
+    border-right: 2px solid #fff;
+	}
+
+	.faqItemDe div:nth-child(1) svg {
+    width: 63px;
+    height: 25px;
+	}
+
+	.faqItemDe div:nth-child(2) svg {
+    margin: 0 2.5px;
+    width: 26.51px;
+    height: 26.51px;
+	}
+
+	.faqItemDe div:nth-child(3) svg {
+    margin: 0 1px;
+    width: 30px;
+    height: 19px;
+	}
+
+	.faqItemDc div {
+    padding: 20px;
+	}
+
+	.faqItemDc div:first-child {
+    border-right: 2px solid #fff;
+	}
+
+	.faqItemDc div:first-child svg {
+    width: 69px;
+    height: 69px;
+	}
+
+	.faqItemDc:last-child svg {
+    margin: 0 5px;
+    width: 45px;
+    height: 45px;
+	}
 }
 
 @media screen and (max-width: 600px) {
@@ -770,5 +867,39 @@
     padding: 10% 0;
     width: 47%;
     height: auto;
+	}
+
+	/* FAQ */
+	.faq {
+		padding: 20px 25px;
+		bottom: 2px;
+    background: url('../img/bg/faq.png') center right / cover no-repeat;
+	}
+
+	.faq h2 {
+    margin: 25px 0 0 0;
+    width: 100%;
+    font-size: 30px;
+	}
+
+	.faqRow {
+		margin: 30px 0 0 0;
+	}
+
+	.faqItem h3 {
+    font-size: 23px;
+	} 
+
+	.faqItem p {
+    font-size: 16px;
+	}
+
+	.faqItem h4 {
+		font-size: 20px;
+	}
+
+	.faq h2 svg {
+    width: 25px;
+    height: 25px;
 	}
 }

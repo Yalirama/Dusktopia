@@ -497,6 +497,71 @@
 	.roadmapItemBody:hover .roadmapItemTitle, .roadmapItemBody:hover .roadmapItemText {
 		font-size: 16px;
 	}
+
+	.roadmapItemBody .corner {
+    width: 15px;
+    height: 15px;
+	}
+
+	.roadmapItemBody .corner-f {
+    bottom: 5px;
+    left: 5px;
+	}
+
+	.roadmapItemBody .corner-s {
+    right: 5px;
+    top: 27px;
+	}
+
+	.roadmapItemBody:hover .corner-s {
+		top: 15px;
+	}
+
+	/* Collaborations */
+	.collaborations {
+    background: url('../img/bg/collaborations.png') center right / cover no-repeat;
+    bottom: 1px;
+    min-height: 42vh;
+	}
+
+	.collaborations h2 {
+    margin: 34px 0 0 0;
+    font-size: 44px;
+    letter-spacing: 8.3px;
+	}
+
+	.collaborationsRow {
+    margin: 40px 0 0 0;
+		padding: 0 10%;
+		justify-content: space-between;
+		flex-wrap: wrap;
+	}
+
+	.collaborationsItem {
+    margin: 0 0 25px 0;
+		padding: 5% 0;
+    width: 23%;
+    height: auto;
+	}
+
+	.collaborationsItem p {
+    font-size: 18px;
+	}
+
+	.collaborationsItem .corner {
+    width: 10px;
+    height: 10px;
+	}
+
+	.collaborationsItem .corner-f {
+    bottom: 5px;
+    left: 5px;
+	}
+
+	.collaborationsItem .corner-s {
+    right: 5px;
+    top: 11px;
+	}
 }
 
 @media screen and (max-width: 600px) {
@@ -685,5 +750,25 @@
 	.factions-roadmap {
 		top: 197vh;
 		height: 100px;
+	}
+
+	/* Collaborations */
+	.collaborations {
+		min-height: 58vh;
+	}
+
+	.collaborations h2 {
+		font-size: 22px;
+	}
+
+	.collaborationsItem p {
+		font-size: 11px;
+	}
+
+	.collaborationsItem {
+    margin: 0 0 15px 0;
+    padding: 10% 0;
+    width: 47%;
+    height: auto;
 	}
 }

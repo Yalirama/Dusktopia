@@ -970,6 +970,10 @@ h1.glitch:after {
   top: calc(15vw / var(--resizer) * 100);
 }
 
+.roadmapItemBody:hover .corner {
+  background-color: #000;
+}
+
 .roadmapItemNum {
   margin: 0 0 calc(5vw / var(--resizer) * 100) 0;
   font-family: 'Neue Machina';

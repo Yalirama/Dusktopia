@@ -441,13 +441,18 @@ h1.glitch:after {
 
 /* Header */
 header {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   padding: calc(15vw / var(--resizer) * 100) calc(45vw / var(--resizer) * 100);
   z-index: 9999;
   background: transparent;
+}
+
+header.fixed {
+  background: linear-gradient(250deg, rgba(255, 255, 255, 0.00) -24.77%, rgba(255, 255, 255, 0.15) 105.99%);
+  backdrop-filter: blur(calc(5vw / var(--resizer) * 100));
 }
 
 /* Intro */

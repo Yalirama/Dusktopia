@@ -12,6 +12,14 @@ burger.addEventListener('click', () => {
 	}
 })
 
+window.addEventListener('scroll', () => {
+  if (window.pageYOffset > 100) { 
+    header.classList.add('fixed')
+  } else {
+    header.classList.remove('fixed')
+  }
+})
+
 const burgerLinks = document.querySelectorAll('.HeaderHead nav ul li a')
 
 burgerLinks.forEach(item => {

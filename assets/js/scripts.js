@@ -12,6 +12,18 @@ burger.addEventListener('click', () => {
 	}
 })
 
+const burgerLinks = document.querySelectorAll('.introHead nav ul li a')
+
+burgerLinks.forEach(item => {
+  item.addEventListener('click', () => {
+    if (intro.classList.contains('active')) {
+      intro.classList.remove('active')
+      document.body.style.overflowY = ''
+      check.checked = false
+    }
+  })
+})
+
 const factionsItems = document.querySelectorAll('.factionsItem');
 
 factionsItems.forEach(item => {
@@ -87,5 +99,20 @@ meetItem.forEach(item => {
       otherItem.classList.remove('active')
   })
   item.classList.add('active')
+  })
+})
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+      e.preventDefault()
+      const targetId = this.getAttribute('href').substring(1)
+      const targetElement = document.getElementById(targetId)
+
+      if (targetElement) {
+          window.scrollTo({
+              top: targetElement.offsetTop,
+              behavior: 'smooth'
+          })
+      }
   })
 })

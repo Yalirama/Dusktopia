@@ -1,23 +1,23 @@
 const burger = document.querySelector('.burger'),
-			intro = document.querySelector('.intro'),
+			header = document.querySelector('header'),
 			check = document.querySelector('#check')
 
 burger.addEventListener('click', () => {
 	if (check.checked) {
-		intro.classList.add('active')
+		header.classList.add('active')
     document.body.style.overflowY = 'hidden'
 	} else {
-		intro.classList.remove('active')
+		header.classList.remove('active')
     document.body.style.overflowY = ''
 	}
 })
 
-const burgerLinks = document.querySelectorAll('.introHead nav ul li a')
+const burgerLinks = document.querySelectorAll('.HeaderHead nav ul li a')
 
 burgerLinks.forEach(item => {
   item.addEventListener('click', () => {
-    if (intro.classList.contains('active')) {
-      intro.classList.remove('active')
+    if (header.classList.contains('active')) {
+      header.classList.remove('active')
       document.body.style.overflowY = ''
       check.checked = false
     }

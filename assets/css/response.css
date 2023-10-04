@@ -130,6 +130,11 @@
     min-width: 200px;
 	}
 
+	/* Header */
+	header {
+		padding: 30px 25px;
+	}
+
 	/* Intro */
 	.intro {
     position: relative;
@@ -138,13 +143,13 @@
     min-height: 100vh;
 	}
 
-	.introHead .logotype,
-	.introHead .burger {
+	.HeaderHead .logotype,
+	.HeaderHead .burger {
 		position: relative;
 		z-index: 99;
 	}
 
-	.introHead nav {
+	.HeaderHead nav {
 		position: absolute;
 		flex-direction: column;
 		align-items: center;
@@ -175,21 +180,21 @@
 		display: none;
 	}
 
-	.introHead nav, .introHead .navLinkS {
+	.HeaderHead nav, .HeaderHead .navLinkS {
 		align-self: center;
 	}
 
-	.introHead nav .button {
+	.HeaderHead nav .button {
 		display: none;
 	}
 
-	.introHead nav ul {
+	.HeaderHead nav ul {
 		display: flex;
 		flex-direction: column;
 		list-style: none;
 	}
 
-	.introHead nav ul li {
+	.HeaderHead nav ul li {
 		position: relative;
 		margin: 0 0 82px 0;
 		text-align: center;
@@ -202,7 +207,7 @@
 		transition: var(--transition);
 	}
 
-	.introHead nav ul li::after {
+	.HeaderHead nav ul li::after {
 		content: '';
 		position: absolute;
 		top: 150%;
@@ -213,11 +218,11 @@
 		background: url('../img/png/star.png') center / cover no-repeat;
 	}
 
-	.introHead nav ul li:last-child::after {
+	.HeaderHead nav ul li:last-child::after {
 		content: none;
 	}
 
-	.introHead nav .navLink {
+	.HeaderHead nav .navLink {
     margin: 0 31px 0 0;
 	}
 
@@ -240,12 +245,12 @@
 		margin: 0;
 	}
 
-	.introHead nav ul li.active,
-	.introHead nav ul li:hover {
+	.HeaderHead nav ul li.active,
+	.HeaderHead nav ul li:hover {
 		color: #fff;
 	}
 
-	.introHead nav ul li a {
+	.HeaderHead nav ul li a {
 		color: inherit;
 	}
 
@@ -269,7 +274,7 @@
     margin: 0 0 30px 0;
 	}
 
-	.intro.active .introHead nav {
+	header.active .HeaderHead nav {
 		top: 0;
 		opacity: 1;
 		visibility: visible;
@@ -430,6 +435,19 @@
 
 	.factionsMoreItem:nth-child(even) {
 		position: static;
+	}
+
+	/* Factions-Roadmap */
+	.factions-roadmap {
+		position: relative;
+		top: -100px;
+		height: auto;
+	}
+
+	.factions-roadmap::before,
+	.factions-roadmap::after {
+		height: 300px;
+    filter: blur(80.5px);
 	}
 
 	/* Roadmap */
@@ -836,6 +854,11 @@
 
 	.headTitle svg {
 		min-width: 169px;
+	}
+
+	/* Header */
+	header {
+		padding: 35px 25px;
 	}
 
 	/* Intro */

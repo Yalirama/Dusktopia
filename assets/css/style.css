@@ -433,10 +433,21 @@ h1.glitch:after {
   fill: #fff;
 }
 
-.introHead .navLinkS, 
+.HeaderHead .navLinkS, 
 .navLinkS {
   display: flex;
   align-items: center;
+}
+
+/* Header */
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: calc(15vw / var(--resizer) * 100) calc(45vw / var(--resizer) * 100);
+  z-index: 9999;
+  background: transparent;
 }
 
 /* Intro */
@@ -447,18 +458,18 @@ h1.glitch:after {
   min-height: 100vh;
 }
 
-.introHead {
+.HeaderHead {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.introHead nav {
+.HeaderHead nav {
   display: flex;
   align-items: center;
 }
 
-.introHead nav ul {
+.HeaderHead nav ul {
   display: none;
 }
 
@@ -507,9 +518,11 @@ h1.glitch:after {
 }
 
 .factionsRow {
+  position: relative;
   display: flex;
   justify-content: space-between;
   width: calc(1581vw / var(--resizer) * 100);
+  z-index: 9;
 }
 
 .factionsTitle {

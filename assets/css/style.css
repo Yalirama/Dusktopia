@@ -1334,25 +1334,50 @@ h1.glitch:after {
   width: 93%;
 }
 
+.meetRow::after {
+  content: '';
+  position: absolute;
+  top: 20%;
+  right: 13.3%;
+  width: calc(150vw / var(--resizer) * 100);
+  height: calc(150vw / var(--resizer) * 100);
+  background: url('../img/png/drag.png') center / cover no-repeat;
+  z-index: 99;
+  animation: rotate180 5s linear infinite;
+}
+
 .meetItem {
+  position: relative;
   display: flex;
   flex-direction: column;
   margin: 0 calc(50vw / var(--resizer) * 100) 0 0;
+  zoom: 100%;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.meetItemInner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
   padding: calc(30vw / var(--resizer) * 100) calc(10vw / var(--resizer) * 100);
   background: linear-gradient(238deg, rgba(255, 255, 255, 0) -7.92%, rgba(255, 255, 255, 0.15) 33.87%);
   clip-path: polygon(14% 0%, 18.3% 2%, 100% 2.3%, 100% 98%, 84.3% 97.8%, 81.2% 100%, 0% 100%, 0% 0%);
   backdrop-filter: blur(calc(26vw / var(--resizer) * 100));
   border: calc(2vw / var(--resizer) * 100) solid rgba(255, 255, 255, 0.33);
   transition: var(--transition);
-  zoom: 100%;
-  cursor: pointer;
+  z-index: 4;
 }
 
 .meetItem.active {
   margin: 0 calc(25vw / var(--resizer) * 100) 0 0;
-  background: linear-gradient(238deg, rgba(255, 255, 255, 1) -7.92%, rgba(255, 255, 255, 0.7) 33.87%);
   zoom: 180%;
   order: -1;
+}
+
+.meetItem.active .meetItemInner {
+  background: linear-gradient(238deg, rgba(255, 255, 255, 1) -7.92%, rgba(255, 255, 255, 0.7) 33.87%);
+  
 }
 
 .meetItem.active .meetSubtitle,
@@ -1391,26 +1416,56 @@ h1.glitch:after {
   transition: all .5s linear;
 }
 
-.meetItem:hover {
+.meetItemInner:hover {
   background: linear-gradient(238deg, rgba(255, 255, 255, 1) -7.92%, rgba(255, 255, 255, 0.7) 33.87%);
   clip-path: polygon(14% 0%, 42.9% 2%, 100% 0%, 100% 98%, 74.4% 98.3%, 46.9% 100%, 0% 100%, 0% 0%);
 }
 
-.meetItem:hover .meetSubtitle,
-.meetItem:hover .meetTitle {
+.meetItemInner:hover .meetSubtitle,
+.meetItemInner:hover .meetTitle {
   color: #000;
 }
 
-.meetItem:hover .meetImg,
-.meetItem:hover .meetImg img {
+.meetItemInner:hover .meetImg,
+.meetItemInner:hover .meetImg img {
   clip-path: polygon(15% 0%, 87.6% 0%, 100% 5.8%, 100% 100%, 85% 100%, 18.5% 100%, 0% 94.3%, 0% 0%);
 }
 
+.meetBody {
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  padding: calc(30vw / var(--resizer) * 100);
+  bottom: calc(12.5vw / var(--resizer) * 100);
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.30) 7.04%, rgba(255, 255, 255, 0.00) 105.55%);
+  border: calc(1.5vw / var(--resizer) * 100) solid #fff;
+  backdrop-filter: blur(calc(95vw / var(--resizer) * 100));
+  clip-path: polygon(15% 0%, 87.6% 0%, 100% 0%, 100% 88%, 94.1% 100%, 18.5% 100%, 0% 100%, 0% 0%);
+  transition: .6s all linear;
+  transform: scale(0);
+}
 
+.meetItem.active .meetBody {
+  right: -125%;
+  opacity: 1;
+  width: calc(420vw / var(--resizer) * 100);
+  transform: scale(1);
+  bottom: calc(10.5vw / var(--resizer) * 100);
+}
 
+.meetBody p {
+  color: #FFF;
+  font-family: 'Mazzard';
+  font-size: calc(11vw / var(--resizer) * 100);;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+}
 
-
-
+.meetBody p span {
+  font-weight: 700;
+}
 
 
 
@@ -1694,5 +1749,14 @@ h1.glitch:after {
   }
   100% {
     transform: skewX(0) rotate(0);
+  }
+}
+
+@keyframes rotate180 {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
   }
 }

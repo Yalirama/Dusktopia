@@ -70,6 +70,7 @@ a {
 body {
 	font-family: 'Mazzard';
   overflow-x: hidden;
+  background-color: #000;
 }
 
 /* Заготовки */
@@ -394,6 +395,49 @@ h1.glitch:after {
   transform: scaleY(-1);
 }
 
+.navLink {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 calc(31vw / var(--resizer) * 100) 0 0;
+  transition: var(--transition);
+}
+
+.navLink:hover {
+  transform: scale(1.2);
+  -webkit-filter: drop-shadow(0 0 calc(10vw / var(--resizer) * 100) #222);
+  filter: drop-shadow(0 0 calc(10vw / var(--resizer) * 100) #222);
+}
+
+.navLink:nth-child(1) {
+  width: calc(26vw / var(--resizer) * 100);
+  height: calc(21.5vw / var(--resizer) * 100);
+}
+
+.navLink:nth-child(2) {
+  width: calc(27vw / var(--resizer) * 100);
+  height: calc(23vw / var(--resizer) * 100);
+}
+
+.navLink:nth-child(3) {
+  width: calc(30vw / var(--resizer) * 100);
+  height: calc(30vw / var(--resizer) * 100);
+}
+
+.navLink svg {
+  width: inherit;
+  height: inherit;
+}
+
+.navLink svg path {
+  fill: #fff;
+}
+
+.introHead .navLinkS, 
+.navLinkS {
+  display: flex;
+  align-items: center;
+}
 
 /* Intro */
 .intro {
@@ -409,8 +453,7 @@ h1.glitch:after {
   align-items: center;
 }
 
-.introHead nav,
-.introHead .navLinkS {
+.introHead nav {
   display: flex;
   align-items: center;
 }
@@ -419,43 +462,7 @@ h1.glitch:after {
   display: none;
 }
 
-.introHead nav .navLink {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 calc(31vw / var(--resizer) * 100) 0 0;
-  transition: var(--transition);
-}
 
-.introHead nav .navLink:hover {
-  transform: scale(1.2);
-  -webkit-filter: drop-shadow(0 0 calc(10vw / var(--resizer) * 100) #222);
-  filter: drop-shadow(0 0 calc(10vw / var(--resizer) * 100) #222);
-}
-
-.introHead nav .navLink:nth-child(1) {
-  width: calc(26vw / var(--resizer) * 100);
-  height: calc(21.5vw / var(--resizer) * 100);
-}
-
-.introHead nav .navLink:nth-child(2) {
-  width: calc(27vw / var(--resizer) * 100);
-  height: calc(23vw / var(--resizer) * 100);
-}
-
-.introHead nav .navLink:nth-child(3) {
-  width: calc(30vw / var(--resizer) * 100);
-  height: calc(30vw / var(--resizer) * 100);
-}
-
-.introHead nav .navLink svg {
-  width: inherit;
-  height: inherit;
-}
-
-.introHead nav .navLink svg path {
-  fill: #fff;
-}
 
 .intro .body {
   display: flex;
@@ -1457,7 +1464,7 @@ h1.glitch:after {
 .meetBody p {
   color: #FFF;
   font-family: 'Mazzard';
-  font-size: calc(11vw / var(--resizer) * 100);;
+  font-size: calc(11vw / var(--resizer) * 100);
   font-style: normal;
   font-weight: 400;
   line-height: 140%;
@@ -1467,8 +1474,33 @@ h1.glitch:after {
   font-weight: 700;
 }
 
+/* Footer */
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: calc(75vw / var(--resizer) * 100) calc(45vw / var(--resizer) * 100);
+  background-color: #000;
+}
 
+.footerRow {
+  display: flex;
+  align-items: center;
+}
 
+footer .logotype {
+  margin: 0 calc(100vw / var(--resizer) * 100) 0 0;
+}
+
+footer .copytext {
+  font-family: 'Mazzard';
+  font-size: calc(15vw / var(--resizer) * 100);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%; 
+  color: #FFF;
+  text-align: right;
+}
 
 
 /* Keyframes */

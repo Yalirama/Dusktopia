@@ -221,22 +221,22 @@
     margin: 0 31px 0 0;
 	}
 
-	.introHead nav .navLink:nth-child(1) {
+	.navLink:nth-child(1) {
     width: 26px;
     height: 21.5px;
 	}
 
-	.introHead nav .navLink:nth-child(2) {
+	.navLink:nth-child(2) {
     width: 27px;
     height: 23px;
 	}
 
-	.introHead nav .navLink:nth-child(3) {
+	.navLink:nth-child(3) {
     width: 30px;
     height: 30px;
 	}
 
-	.introHead nav .navLink:last-child {
+	.navLink:last-child {
 		margin: 0;
 	}
 
@@ -764,6 +764,25 @@
 
 	.meetBody p {
 		font-size: 26px;
+	}
+
+	/* Footer */
+	footer {
+		flex-direction: column;
+		padding: 74px 45px;
+	}
+
+	.footerRow {
+		flex-direction: column;
+	}
+
+	footer .logotype {
+		margin: 0 0 50px 0;
+	}
+
+	footer .copytext {
+		margin: 130px 0 0 0;
+    font-size: 15px;
 	}
 }
 

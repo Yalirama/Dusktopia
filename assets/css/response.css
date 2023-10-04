@@ -567,7 +567,7 @@
 	.faq {
 		bottom: 1px;
     padding: 33px 45px;
-    background: url(../img/bg/faq.png) top / cover no-repeat;
+    background: url('../img/bg/faq.png') top / cover no-repeat;
     min-height: 100vh;
 	}
 

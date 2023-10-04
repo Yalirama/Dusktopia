@@ -77,3 +77,15 @@ factionsMoreNext.forEach((item, i) => {
     factionsMoreInner[nextIndex].classList.add('active')
   })
 })
+
+
+const meetItem = document.querySelectorAll('.meetItem')
+
+meetItem.forEach(item => {
+  item.addEventListener('click', () => {
+    meetItem.forEach(otherItem => {
+      otherItem.classList.remove('active')
+  })
+  item.classList.add('active')
+  })
+})

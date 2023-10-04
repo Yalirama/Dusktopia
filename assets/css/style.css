@@ -843,7 +843,7 @@ h1.glitch:after {
   right: 0;
   width: 120%;
   height: inherit;
-  transform: rotate();
+  
   background: linear-gradient(200deg, #0A1418 -20.47%, #352F46 112.47%);
   filter: blur(calc(64vw / var(--resizer) * 100));
   z-index: 2;
@@ -1118,6 +1118,7 @@ h1.glitch:after {
 }
 
 .faqRow {
+  position: relative;
   display: flex;
   width: 95%;
   align-self: flex-end;
@@ -1126,7 +1127,8 @@ h1.glitch:after {
   background: linear-gradient(238deg, rgba(255, 255, 255, 0.00) -7.92%, rgba(255, 255, 255, 0.15) 33.87%);
   clip-path: polygon(4.9% 0%, 6.3% 2.3%, 100% 3%, 100% 96.5%, 94.9% 96.5%, 93.1% 100%, 0% 100%, 0.1% 0%);
   backdrop-filter: blur(calc(26vw / var(--resizer) * 100));
-  border: calc(2vw / var(--resizer) * 100) solid rgba(255, 255, 255, 0.33)
+  border: calc(2vw / var(--resizer) * 100) solid rgba(255, 255, 255, 0.33);
+  z-index: 4;
 }
 
 .faqItems {
@@ -1257,6 +1259,162 @@ h1.glitch:after {
   width: calc(45vw / var(--resizer) * 100);
   height: calc(45vw / var(--resizer) * 100);
 }
+
+/* FAQ-Meet */
+.faq-meet {
+  position: relative;
+  top: calc(-100vw / var(--resizer) * 100);
+  width: 100%;
+}
+
+.faq-meet::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 140%;
+  height: calc(300vw / var(--resizer) * 100);
+  background: linear-gradient(201deg, #09090A 61.26%, #121928 95.96%);  
+  filter: blur(calc(80.5vw / var(--resizer) * 100));
+  z-index: 2;
+  overflow: hidden;
+}
+
+.faq-meet::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 140%;
+  transform: scaleX(-1);
+  height: calc(300vw / var(--resizer) * 100);
+  background: linear-gradient(201deg, #09090A 61.26%, #121928 95.96%);  
+  filter: blur(calc(80.5vw / var(--resizer) * 100));
+  z-index: 2;
+  overflow: hidden;
+}
+
+/* Meet */
+.meet {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: calc(75vw / var(--resizer) * 100) 0 calc(200vw / var(--resizer) * 100) 0;
+  background: url('../img/bg/meet.png') center / cover no-repeat;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.meet h2 {
+  position: relative;
+  margin: calc(34vw / var(--resizer) * 100) 0 0 0;
+  font-size: calc(74vw / var(--resizer) * 100);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: calc(13.44vw / var(--resizer) * 100);
+  color: #FFF;
+  text-align: center;
+  z-index: 4;
+}
+
+.meet h2 svg {
+  width: calc(71vw / var(--resizer) * 100);
+  height: calc(44vw / var(--resizer) * 100);
+}
+
+.meetRow {
+  position: relative;
+  left: calc(80vw / var(--resizer) * 100);
+  display: flex;
+  flex-direction: row;
+  align-self: flex-end;
+  align-items: flex-start;
+  margin: calc(104vw / var(--resizer) * 100) 0 0 0;
+  width: 93%;
+}
+
+.meetItem {
+  display: flex;
+  flex-direction: column;
+  margin: 0 calc(50vw / var(--resizer) * 100) 0 0;
+  padding: calc(30vw / var(--resizer) * 100) calc(10vw / var(--resizer) * 100);
+  background: linear-gradient(238deg, rgba(255, 255, 255, 0) -7.92%, rgba(255, 255, 255, 0.15) 33.87%);
+  clip-path: polygon(14% 0%, 18.3% 2%, 100% 2.3%, 100% 98%, 84.3% 97.8%, 81.2% 100%, 0% 100%, 0% 0%);
+  backdrop-filter: blur(calc(26vw / var(--resizer) * 100));
+  border: calc(2vw / var(--resizer) * 100) solid rgba(255, 255, 255, 0.33);
+  transition: var(--transition);
+  zoom: 100%;
+  cursor: pointer;
+}
+
+.meetItem.active {
+  margin: 0 calc(25vw / var(--resizer) * 100) 0 0;
+  background: linear-gradient(238deg, rgba(255, 255, 255, 1) -7.92%, rgba(255, 255, 255, 0.7) 33.87%);
+  zoom: 180%;
+  order: -1;
+}
+
+.meetItem.active .meetSubtitle,
+.meetItem.active .meetTitle {
+  color: #000;
+}
+
+.meetImg,
+.meetImg img {
+  width: calc(307vw / var(--resizer) * 100);
+  height: calc(388vw / var(--resizer) * 100);
+  transition: var(--transition);
+  clip-path: polygon(15% 0%, 94.3% 0%, 100% 5.8%, 100% 100%, 85% 100%, 6.3% 99.8%, 0% 94.3%, 0% 0%);
+  overflow: hidden;
+}
+
+.meetSubtitle {
+  margin: calc(13vw / var(--resizer) * 100) 0 0 0;
+  font-family: 'Mazzard';
+  font-size: calc(12vw / var(--resizer) * 100);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+  color: #FFF;
+  transition: var(--transition);
+}
+
+.meetTitle {
+  margin: calc(3vw / var(--resizer) * 100) 0 0 0;
+  font-size: calc(25vw / var(--resizer) * 100);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 117.8%;
+  text-transform: uppercase;
+  color: #FFF;
+  transition: all .5s linear;
+}
+
+.meetItem:hover {
+  background: linear-gradient(238deg, rgba(255, 255, 255, 1) -7.92%, rgba(255, 255, 255, 0.7) 33.87%);
+  clip-path: polygon(14% 0%, 42.9% 2%, 100% 0%, 100% 98%, 74.4% 98.3%, 46.9% 100%, 0% 100%, 0% 0%);
+}
+
+.meetItem:hover .meetSubtitle,
+.meetItem:hover .meetTitle {
+  color: #000;
+}
+
+.meetItem:hover .meetImg,
+.meetItem:hover .meetImg img {
+  clip-path: polygon(15% 0%, 87.6% 0%, 100% 5.8%, 100% 100%, 85% 100%, 18.5% 100%, 0% 94.3%, 0% 0%);
+}
+
+
+
+
+
+
+
+
+
+
 
 /* Keyframes */
 @keyframes noise-anim {

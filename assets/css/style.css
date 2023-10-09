@@ -459,7 +459,7 @@ header.fixed {
 .intro {
   position: relative;
   padding: calc(15vw / var(--resizer) * 100) calc(45vw / var(--resizer) * 100);
-  background: url('../img/bg/home.png') center / cover no-repeat;
+  background: url('../img/bg/home.webp') center / cover no-repeat;
   min-height: 100vh;
 }
 
@@ -519,7 +519,7 @@ header.fixed {
   align-items: center;
   padding: calc(15vw / var(--resizer) * 100) calc(45vw / var(--resizer) * 100);
   min-height: 100vh;
-  background: url('../img/bg/factions.png') center / cover no-repeat;
+  background: url('../img/bg/factions.webp') center / cover no-repeat;
 }
 
 .factionsRow {
@@ -712,7 +712,7 @@ header.fixed {
   height: 100vh;
   opacity: 0;
   visibility: hidden;
-  z-index: 999;
+  z-index: 99999;
   transition: opacity .2s ease-out;
 }
 
@@ -836,7 +836,7 @@ header.fixed {
   padding: calc(139vw / var(--resizer) * 100) calc(45vw / var(--resizer) * 100) calc(246vw / var(--resizer) * 100) calc(155vw / var(--resizer) * 100);
   min-height: 200vh;
   align-items: flex-start;
-  background: url('../img/bg/roadmap.png') center / cover no-repeat;
+  background: url('../img/bg/roadmap.webp') center / cover no-repeat;
 }
 
 .factions-roadmap {
@@ -1043,7 +1043,11 @@ header.fixed {
 /* Collaborations */
 .collaborations {
   position: relative;
-  background: url('../img/bg/collaborations.png') center / cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: url('../img/bg/collaborations.webp') center / cover no-repeat;
   min-height: 70vh;
 }
 
@@ -1119,8 +1123,8 @@ header.fixed {
   position: relative;
   display: flex;
   flex-direction: column;
-  padding: calc(33vw / var(--resizer) * 100) calc(45vw / var(--resizer) * 100);
-  background: url('../img/bg/faq.png') top / cover no-repeat;
+  padding: 7% calc(45vw / var(--resizer) * 100) calc(33vw / var(--resizer) * 100) calc(45vw / var(--resizer) * 100);
+  background: url('../img/bg/faq.webp') top / cover no-repeat;
   min-height: 100vh;
 }
 
@@ -1324,8 +1328,8 @@ header.fixed {
   position: relative;
   display: flex;
   flex-direction: column;
-  padding: calc(75vw / var(--resizer) * 100) 0 calc(200vw / var(--resizer) * 100) 0;
-  background: url('../img/bg/meet.png') center / cover no-repeat;
+  padding: calc(125vw / var(--resizer) * 100) 0 calc(200vw / var(--resizer) * 100) 0;
+  background: url('../img/bg/meet.webp') center / cover no-repeat;
   min-height: 100vh;
   overflow: hidden;
 }

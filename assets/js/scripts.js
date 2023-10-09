@@ -48,16 +48,16 @@ const factionsMoreInner = document.querySelectorAll('.factionsMoreInner')
 factionsMoreInner.forEach((item, i) => {
   switch (i) {
     case 0:
-      item.style.background = "url('/assets/img/bg/badlands.png') center / cover no-repeat"
+      item.style.background = "url('/assets/img/bg/badlands.webp') center / cover no-repeat"
       break
     case 1:
-      item.style.background = "url('/assets/img/bg/glacial-frontier.png') center / cover no-repeat"
+      item.style.background = "url('/assets/img/bg/glacial-frontier.webp') center / cover no-repeat"
       break
     case 2:
-      item.style.background = "url('/assets/img/bg/sundered-grove.png') center / cover no-repeat"
+      item.style.background = "url('/assets/img/bg/sundered-grove.webp') center / cover no-repeat"
       break
     case 3:
-      item.style.background = "url('/assets/img/bg/sky-citadel.png') center / cover no-repeat"
+      item.style.background = "url('/assets/img/bg/sky-citadel.webp') center / cover no-repeat"
       break
     default:
       break
@@ -77,6 +77,14 @@ const factionsMoreNext = document.querySelectorAll('.factionsMoreInnerHead .butt
 factionsMoreClose.forEach(item => {
   item.addEventListener('click', (e) => {
     e.preventDefault()
+    factionsMoreCloseFunc()
+  })
+})
+
+const factionsItemsMenu = document.querySelectorAll('.factionsMoreInner .menu a')
+
+factionsItemsMenu.forEach(item => {
+  item.addEventListener('click', () => {
     factionsMoreCloseFunc()
   })
 })

@@ -137,6 +137,7 @@
 
 	header.fixed {
   	backdrop-filter: blur(8px);
+		-webkit-backdrop-filter: blur(8px);
 	}
 
 	/* Intro */
@@ -426,6 +427,7 @@
     height: auto;
     border-width: 2px;
     backdrop-filter: blur(50px);
+		-webkit-backdrop-filter: blur(50px);
 	}
 
 	.factionsMoreItem p, .factionsMoreItem img {
@@ -452,6 +454,7 @@
 	.factions-roadmap::after {
 		height: 300px;
     filter: blur(80.5px);
+		-webkit-filter: blur(80.5px);
 	}
 
 	/* Roadmap */
@@ -494,6 +497,7 @@
     padding: 45px 40px;
     width: 500px;
     backdrop-filter: blur(5px);
+		-webkit-backdrop-filter: blur(5px);
     border-width: 2px;
 	}
 
@@ -510,6 +514,7 @@
 
 	.roadmapItemBody:hover {
     width: 550px;
+    background: -webkit-linear-gradient(250deg, rgba(255, 255, 255, 0.70) -24.77%, rgba(255, 255, 255, 0.85) 105.99%);
     background: linear-gradient(250deg, rgba(255, 255, 255, 0.70) -24.77%, rgba(255, 255, 255, 0.85) 105.99%);
     clip-path: polygon(32.7% 0%, 35.9% 3.8%, 100% 4%, 100% 95%, 63.3% 95.3%, 60.2% 100%, 0% 100%, 0% 0%);
 	}
@@ -557,6 +562,7 @@
 		padding: 0 10%;
 		justify-content: space-between;
 		flex-wrap: wrap;
+		width: 100%;
 	}
 
 	.collaborationsItem {
@@ -605,6 +611,7 @@
     padding: 5px 0 0 0;
 		width: 100%;
     backdrop-filter: blur(26px);
+		-webkit-backdrop-filter: blur(26px);
     border: 2px solid rgba(255, 255, 255, 0.33);
 		flex-wrap: wrap;
 		clip-path: polygon(16.6% 0%, 18.8% 0.8%, 100% 0.8%, 100% 99.3%, 79.5% 99.3%, 78.2% 100%, 0% 100%, 0.1% 0%);
@@ -691,6 +698,7 @@
 	.faq-meet::after {
     height: 300px;
     filter: blur(80.5px);
+		-webkit-filter: blur(80.5px);
 	}
 
 	/* Meet */
@@ -747,6 +755,7 @@
 	.meetItemInner {
     padding: 60px 20px 30px 20px;
     backdrop-filter: blur(26px);
+		-webkit-backdrop-filter: blur(26px);
     border: 2px solid rgba(255, 255, 255, 0.33);
 	}
 
@@ -758,10 +767,14 @@
 		display: flex;
     width: 100%;
     height: auto;
+		max-height: none;
 	}
 
 	.meetItem.active {
 		zoom: 100%;
+		-ms-zoom: 1.0;
+		-webkit-zoom: 1.0;
+		-moz-transform:  scale(1.0,1.0);
 	}
 
 	.meetBody {
@@ -772,13 +785,14 @@
     bottom: 0;
     border: 1.5px solid #fff;
     backdrop-filter: blur(calc(95vw / var(--resizer) * 100));
+		-webkit-backdrop-filter: blur(calc(95vw / var(--resizer) * 100));
 		width: 100%;
 		transform: scale(1);
   }
 
 	.meetItem.active .meetBody {
 		position: relative;
-    right: auto;
+    left: auto;
     opacity: 1;
     width: 100%;
 		bottom: 40px;
@@ -815,8 +829,11 @@
     height: 25px;
 	}
 	.burger {
-    zoom: 40%;
 		transform: rotate(180deg);
+    zoom: 40%;
+		-ms-zoom: 0.4;
+		-webkit-zoom: 0.4;
+		-moz-transform: scale(0.4,0.4) rotate(180deg);
 	}
 
 	label span {
@@ -928,11 +945,17 @@
 	}
 
 	.factionsItemBody .button {
-		zoom: 66%;
+		zoom: 66%; 
+		-ms-zoom: .6;
+		-webkit-zoom: .6;
+		-moz-transform:  scale(.6,.6);
 	}
 
 	.factionsMoreInnerHead .button {
 		zoom: 80%;
+		-ms-zoom: .8;
+		-webkit-zoom: 0.8;
+		-moz-transform:  scale(0.8,0.8);
 	}
 
 	.factionsMoreImg {
@@ -1001,8 +1024,7 @@
 	}
 
 	.factions-roadmap {
-		top: 197vh;
-		height: 100px;
+		top: -90px;
 	}
 
 	/* Collaborations */
@@ -1099,5 +1121,24 @@
 
 	.meetBody p {
     font-size: 16px;
+	}
+}
+
+@media screen and (max-width: 390px) {
+	/* Header */
+	.HeaderHead nav ul li {
+		margin: 0 0 44px 0;
+		font-size: 20px;
+	}
+
+	.HeaderHead nav ul li::after {
+		content: '';
+		position: absolute;
+		top: 125%;
+		left: 50%;
+		width: 15px;
+		height: 15px;
+		transform: translate(-50%, 50%);
+		background: url('../img/png/star.png') center / cover no-repeat;
 	}
 }

@@ -132,3 +132,10 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       }
   })
 })
+
+const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+
+if (!isSafari) {
+  document.documentElement.style.setProperty('--filter', 'blur(calc(64vw / var(--resizer) * 100))');
+  document.documentElement.style.setProperty('--backdrop-filter', 'none');
+}

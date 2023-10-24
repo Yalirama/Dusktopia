@@ -139,3 +139,11 @@ if (!isSafari) {
   document.documentElement.style.setProperty('--filter', 'blur(calc(64vw / var(--resizer) * 100))');
   document.documentElement.style.setProperty('--backdrop-filter', 'none');
 }
+
+const fakeLink = document.querySelectorAll('.fakeLink')
+
+fakeLink.forEach(item => {
+    item.addEventListener('click', (e) => {
+        e.preventDefault();
+    })
+})
